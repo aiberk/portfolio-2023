@@ -6,7 +6,7 @@ export type Props = {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="layout">
+    <div>
       <header>
         <Link href="/">
           <h1>
@@ -17,7 +17,7 @@ export default function Layout({ children }: Props) {
         </Link>
       </header>
 
-      <div className="page-content">{children}</div>
+      <div>{children}</div>
 
       <footer>
         <p>Copyright 2021 Just Add Marmite :</p>

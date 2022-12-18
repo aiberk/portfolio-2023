@@ -18,7 +18,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <nav className={styles.code}>Aby</nav>
+        <nav className="text-3xl underline bold">Aby</nav>
       </main>
     </>
   );
