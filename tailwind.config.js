@@ -5,6 +5,7 @@ module.exports = {
     "./components/**/*.tsx",
     "./components/ui-components/*.tsx",
   ],
+  darkMode: "class",
   theme: {
     extend: {},
   },
