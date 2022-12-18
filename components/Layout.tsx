@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import Header from "./ui-components/Header";
+import Footer from "./ui-components/Footer";
+
 export type Props = {
   children: any;
 };
@@ -7,21 +10,9 @@ export type Props = {
 export default function Layout({ children }: Props) {
   return (
     <div>
-      <header>
-        <Link href="/">
-          <h1>
-            <span>Fat Boy</span>
-            <span>Recipes</span>
-          </h1>
-          <h2>Spread The Joy</h2>
-        </Link>
-      </header>
-
+      <Header />
       <div>{children}</div>
-
-      <footer>
-        <p>Copyright 2021 Just Add Marmite :</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
