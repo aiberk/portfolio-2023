@@ -46,6 +46,12 @@ export default function Home({ mdx }) {
       </Head>
       <main>
         <Hero />
+        {mdx.map((item) => (
+          //User reduce to filter out display=false
+          <div key={item.sys.id}>
+            <h1>{item.fields.name}</h1>
+          </div>
+        ))}
       </main>
     </>
   );
