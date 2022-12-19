@@ -9,7 +9,7 @@ const navigations = [
   { label: "Lets Talk", path: "/" },
 ];
 
-type Props = {};
+type Props = { navigations: string };
 
 const Header = (props: Props) => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -43,7 +43,10 @@ const Header = (props: Props) => {
       );
     } else {
       return (
-        <Button className="" onClick={() => setTheme("dark")}>
+        <Button
+          className="dark: bg-yellow-600"
+          onClick={() => setTheme("dark")}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

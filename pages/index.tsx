@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 import Hero from "../components/ui-components/Hero";
 import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
+import Card from "../components/ui-components/Card";
 
 type Post = {
   title: string;
@@ -15,6 +16,7 @@ type Post = {
   thumbnail: any;
   publishedDate: Date;
   tags: string;
+  mdx: any;
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -48,9 +50,8 @@ export default function Home({ mdx }) {
         <Hero />
         {mdx.map((item) => (
           //User reduce to filter out display=false
-          <div key={item.sys.id}>
-            <h1>{item.fields.name}</h1>
-          </div>
+
+          <Card key={item.sys.id} item={item}></Card>
         ))}
       </main>
     </>
