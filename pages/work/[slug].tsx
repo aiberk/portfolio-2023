@@ -43,6 +43,7 @@ export type Props = {
 };
 
 export default function Work({ mdx }) {
+  const { fields, sys } = mdx;
   console.log(mdx);
-  return <div>Work Page</div>;
+  return <div>{fields.mdx}</div>;
 }
