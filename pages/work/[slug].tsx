@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const client = createClient({
   space: "9ml0r0lfbqrn",
@@ -45,5 +46,12 @@ export type Props = {
 export default function Work({ mdx }) {
   const { fields, sys } = mdx;
   console.log(mdx);
-  return <div>{fields.mdx}</div>;
+  return (
+    <>
+      <div>{documentToReactComponents(fields.richText)}</div>
+    </>
+  );
 }
+
+// http://localhost:3000/work/1MHYFjc42C60nHqyeX3ZGv
+//[0].fields.richText
