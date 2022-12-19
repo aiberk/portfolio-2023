@@ -4,19 +4,21 @@ import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Hero from "../components/ui-components/Hero";
 import { createClient } from "contentful";
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import Card from "../components/ui-components/Card";
+// import { Props } from "../components/Layout";
 
-type Post = {
+type Props = {
   title: string;
   id: string;
   display: boolean;
   description: string;
-  body: any;
-  thumbnail: any;
+  body: string;
+  thumbnail: string;
   publishedDate: Date;
   tags: string;
   mdx: any;
+  item: any;
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -32,7 +34,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ mdx }) {
+export default function Home({ mdx }: Props) {
   console.log(mdx);
 
   return (
