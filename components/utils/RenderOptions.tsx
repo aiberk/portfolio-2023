@@ -1,5 +1,5 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+// import { BLOCKS } from "@contentful/rich-text-types";
 
 // Create a bespoke renderOptions object to target BLOCKS.EMBEDDED_ENTRY (linked entries e.g. videoEmbed
 // and BLOCKS.EMBEDDED_ASSET (linked assets e.g. images)
@@ -34,6 +34,6 @@ import { BLOCKS } from "@contentful/rich-text-types";
 //   },
 // };
 
-export default function RichTextResponse({ richTextResponse }) {
-  return <>{documentToReactComponents(richTextResponse, renderOptions)}</>;
-}
+// export default function RichTextResponse({ richTextResponse }) {
+//   return <>{documentToReactComponents(richTextResponse, renderOptions)}</>;
+// }

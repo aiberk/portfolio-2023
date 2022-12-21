@@ -49,14 +49,13 @@ const renderOptions = {
   ///FIX FOR VIDEO
   renderNode: {
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-      if (node.data.target.fields.file.contentType === "video/mp4") {
+      if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
         return (
-          <iframe
+          <video
             src={node.data.target.fields.embedUrl}
             height="100%"
             width="100%"
             title={node.data.target.fields.title}
-            allowFullScreen={true}
           />
         );
       }
@@ -64,12 +63,19 @@ const renderOptions = {
 
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       // render the EMBEDDED_ASSET as you need
-      return (
-        <img
-          src={`https://${node.data.target.fields.file.url}`}
-          alt={node.data.target.fields.description}
-        />
-      );
+
+      if (node.data.target.fields.file.contentType === "video/mp4") {
+        return (
+          <video controls src={`https://${node.data.target.fields.file.url}`} />
+        );
+      } else if (node.data.target.fields.file.contentType != "video/mp4") {
+        return (
+          <img
+            src={`https://${node.data.target.fields.file.url}`}
+            alt={node.data.target.fields.description}
+          />
+        );
+      }
     },
   },
 };
