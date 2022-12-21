@@ -40,7 +40,7 @@ export default function Home({ mdx }: Props) {
   return (
     <>
       <Head>
-        <title>Abraham "Aby" Iberkleid's Portfolio</title>
+        <title>Abraham Aby Iberkleids Portfolio</title>
         <meta
           name="description"
           content="Abraham 'Aby' Iberkleid's Portfolio"

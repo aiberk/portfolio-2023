@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 type Props = { item?: any };
 
 const Card = ({ item }: Props) => {
@@ -13,6 +14,7 @@ const Card = ({ item }: Props) => {
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
         placeholder="blur"
       />
+      <Link href={`/work/${item.sys.id}`}>{item.sys.id}</Link>
     </div>
   );
 };
