@@ -25,3 +25,13 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+//Tulip Example
+// exportPathMap: function () {
+//   return {
+//     '/': { page: '/' },
+//     '/apps': { page: '/apps', query: { query: 'query' } },
+//     '/apps/[id]': { page: '/apps/[id]' },
+//   };
+// },
+// trailingSlash: true,
