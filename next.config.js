@@ -10,9 +10,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.ctfassets.net",
-        port: "",
-        pathname: "/9ml0r0lfbqrn/**",
+        hostname: "**",
       },
     ],
   },
@@ -22,11 +20,3 @@ const nextConfig = {
 // "//images.ctfassets.net/9ml0r0lfbqrn/4pRK0BxMxZlxORarTFdqUU/8f0b37e421f714b7bb1e1cb84e1713a5/shakes.jpeg"
 
 module.exports = nextConfig;
-
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx?$/,
-});
-
-module.exports = withMDX({
-  pageExtensions: ["mdx", "tsx"],
-});
