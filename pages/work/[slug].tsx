@@ -2,6 +2,8 @@ import Link from "next/link";
 import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS } from "@contentful/rich-text-types";
+import RichTextResponse from "../../components/utils/RenderOptions";
 
 const client = createClient({
   space: "9ml0r0lfbqrn",
@@ -43,12 +45,41 @@ export type Props = {
   children: any;
 };
 
+const renderOptions = {
+  ///FIX FOR VIDEO
+  renderNode: {
+    [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+      if (node.data.target.fields.file.contentType === "video/mp4") {
+        return (
+          <iframe
+            src={node.data.target.fields.embedUrl}
+            height="100%"
+            width="100%"
+            title={node.data.target.fields.title}
+            allowFullScreen={true}
+          />
+        );
+      }
+    },
+
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+      // render the EMBEDDED_ASSET as you need
+      return (
+        <img
+          src={`https://${node.data.target.fields.file.url}`}
+          alt={node.data.target.fields.description}
+        />
+      );
+    },
+  },
+};
+
 export default function Work({ mdx }) {
   const { fields, sys } = mdx;
-  console.log(mdx);
+  console.log(fields.richText);
   return (
     <>
-      <div>{documentToReactComponents(fields.richText)}</div>
+      <div>{documentToReactComponents(fields.richText, renderOptions)}</div>
     </>
   );
 }
@@ -56,3 +87,4 @@ export default function Work({ mdx }) {
 // http://localhost:3000/work/1MHYFjc42C60nHqyeX3ZGv
 //[0].fields.richText
 // http://localhost:3000/work/3t0TpvPZnFD6rApqrS2ASZ
+// https:////videos.ctfassets.net/9ml0r0lfbqrn/1J6yhZzWqpPydHhtJaAI6T/475cba757bda354ab7b928ed48112191/hw4-test0000-0701.mp4
