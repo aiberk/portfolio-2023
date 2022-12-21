@@ -6,6 +6,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - React
 - Typescript
 - Contentful
+- Jest
+- React Testing Library
 - Continous Integration
 
 ## Design
