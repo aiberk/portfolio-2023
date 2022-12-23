@@ -3,7 +3,6 @@ import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import RichTextResponse from "../../components/utils/RenderOptions";
 import { config } from "../../config";
 
 const client = createClient({
