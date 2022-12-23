@@ -5,6 +5,7 @@ import Hero from "../components/ui-components/Hero";
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import Card from "../components/ui-components/Card";
+import { config } from "../config";
 // import { Props } from "../components/Layout";
 
 type Props = {
@@ -22,8 +23,8 @@ type Props = {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const client = createClient({
-    space: "9ml0r0lfbqrn",
-    accessToken: "M1Y1hUxpPygdvCWHH2vymNeeSJb2SYqLiTTgZHgTHmg",
+    space: config.spaceId,
+    accessToken: config.apiKey,
   });
 
   const res = await client.getEntries({ content_type: "mdx" });

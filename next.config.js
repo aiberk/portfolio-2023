@@ -10,8 +10,8 @@ const nextConfig = {
   },
 
   env: {
-    MYACCESSTOKEN: process.env.NEXT_PUBLIC_CONTNETFUL_ACCESS_KEY,
-    MYSPACEID: process.env.NEXT_PUBLIC_CONTNETFUL_SPACE_ID,
+    CONTNETFUL_ACCESS_KEY: process.env.CONTNETFUL_ACCESS_KEY,
+    CONTNETFUL_SPACE_ID: process.env.CONTNETFUL_SPACE_ID,
   },
   images: {
     remotePatterns: [

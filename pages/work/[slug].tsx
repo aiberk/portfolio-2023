@@ -4,10 +4,11 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import RichTextResponse from "../../components/utils/RenderOptions";
+import { config } from "../../config";
 
 const client = createClient({
-  space: "9ml0r0lfbqrn",
-  accessToken: "M1Y1hUxpPygdvCWHH2vymNeeSJb2SYqLiTTgZHgTHmg",
+  space: config.spaceId,
+  accessToken: config.apiKey,
 });
 
 // Create inidivual paths
