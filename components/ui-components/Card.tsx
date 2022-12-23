@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-type Props = { item?: any };
+// type Props = { item: Array<string | number | boolean | {}> };
+interface Item {
+  [key: string]: any;
+}
 
-const Card = ({ item }: Props) => {
+const Card = ({ item }: Item) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
     <div>
       <Image
-        src={"https:" + thumbnail.fields.file.url}
+        src={`https:${thumbnail.fields.file.url}`}
         alt={`${name} thumbnail image`}
         width={thumbnail.fields.file.details.image.width}
         height={thumbnail.fields.file.details.image.height}

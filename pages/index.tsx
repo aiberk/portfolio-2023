@@ -1,24 +1,16 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
+// import { Inter } from "@next/font/google";
+// import styles from "../styles/Home.module.css";
 import Hero from "../components/ui-components/Hero";
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import Card from "../components/ui-components/Card";
 import { config } from "../config";
+import { Interface } from "readline";
 // import { Props } from "../components/Layout";
 
 type Props = {
-  title: string;
-  id: string;
-  display: boolean;
-  description: string;
-  body: string;
-  thumbnail: string;
-  publishedDate: Date;
-  tags: string;
-  mdx: any;
-  item: any;
+  mdx: Array<string | number | boolean | []>;
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -32,9 +24,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // ...
 };
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
-export default function Home(this: any, { mdx }: Props) {
+export default function Home({ mdx }: Props) {
   console.log(mdx);
 
   return (
@@ -50,7 +42,7 @@ export default function Home(this: any, { mdx }: Props) {
       </Head>
       <main>
         <Hero />
-        {mdx.map((item) => (
+        {mdx.map((item: any) => (
           //User reduce to filter out display=false
 
           <Card key={item.sys.id} item={item}></Card>
