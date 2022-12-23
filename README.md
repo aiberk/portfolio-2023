@@ -1,4 +1,4 @@
-## Programming
+## Development
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -6,9 +6,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - React
 - Typescript
 - Contentful
+
+## Testing
+
 - Jest
 - React Testing Library
-- Continous Integration
+- Cyrpess
 
 ## Design
 
@@ -22,9 +25,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Contentful
 - Github Pages
 
-## Deployment
+## Deployment & Continous Integration
 
 - Vercel
 - Github
 - Github Actions
-- Contentful
+- Contentful Hooks
