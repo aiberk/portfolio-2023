@@ -1,6 +1,4 @@
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer>
       <span>abyiber</span> &copy; {new Date().getFullYear()} All Rights Reserved

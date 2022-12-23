@@ -1,8 +1,5 @@
 import Button from "../ui-components/Button";
-
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   return (
     <section className="mt-16">
       <h1 className="text-7xl font-bold">Hi I&lsquo;m Aby</h1>

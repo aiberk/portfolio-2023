@@ -9,11 +9,6 @@ const navigations = [
   { label: "Lets Talk", path: "/" },
 ];
 
-type Props = {
-  label: string;
-  path: string;
-};
-
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
