@@ -14,6 +14,7 @@ const customJestConfig = {
 
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
   },
+  preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
 };
 
