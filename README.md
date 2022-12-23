@@ -12,4 +12,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Design
 
+- Figma
+- Google Lighthouse
+- Google Analytics
+- Vercel Analytics
+
+## Content Provider
+
+- Contentful
+- Github Pages
+
 ## Deployment
+
+- Vercel
+- Github
+- Github Actions
+- Contentful
