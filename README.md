@@ -14,6 +14,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Jest
 - React Testing Library
 - Cyrpess
+- Chrome Lighthouse
 
 ## Design
 

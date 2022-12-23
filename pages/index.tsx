@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(this: any, { mdx }: Props) {
-  console.log(this.mdx);
+  console.log(mdx);
 
   return (
     <>
