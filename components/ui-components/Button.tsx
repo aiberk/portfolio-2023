@@ -1,4 +1,10 @@
-type Props = { children?: any; onClick?: any; className: string };
+import { MouseEventHandler } from "react";
+
+type Props = {
+  children?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  className: string;
+};
 
 const Button = ({ children, onClick, className }: Props) => {
   return (
