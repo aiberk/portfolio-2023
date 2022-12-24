@@ -6,15 +6,10 @@ import { createClient } from "contentful";
 import { GetStaticProps } from "next";
 import Card from "../components/ui-components/Card";
 import { config } from "../config";
-// import { Props } from "../components/Layout";
-
-interface Item {
-  [key: string]: [value: string | boolean | number | []];
-}
+import { ContentFulItem } from "../types/types";
 
 type Props = {
-  mdx: Array<Item>;
-  id: number;
+  mdx: Array<ContentFulItem>;
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -46,7 +41,7 @@ export default function Home({ mdx }: Props) {
       </Head>
       <main>
         <Hero />
-        {mdx.map((item: Item) => (
+        {mdx.map((item) => (
           //User reduce to filter out display=false
 
           <Card key={item.sys.id} item={item}></Card>

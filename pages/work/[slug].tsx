@@ -4,6 +4,8 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { config } from "../../config";
+import { ContentFulItem } from "../../types/types";
+import { RichTextType } from "../../types/richTextTypes";
 
 const client = createClient({
   space: config.spaceId,
@@ -41,9 +43,9 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export type Props = {
-  children: any;
-};
+// export type Props = {
+//   children: any;
+// };
 
 const renderOptions = {
   ///FIX FOR VIDEO

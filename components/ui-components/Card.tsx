@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ContentFulItem } from "../../types/types";
 
-interface Item {
-  [key: string]: any;
-}
+type Props = {
+  item: ContentFulItem;
+};
 
-const Card = ({ item }: Item) => {
+const Card = ({ item }: Props) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
     <div>
@@ -18,6 +19,9 @@ const Card = ({ item }: Item) => {
         placeholder="blur"
       />
       <Link href={`/work/${item.sys.id}`}>{item.sys.id}</Link>
+      <p>{description}</p>
+      <p>{mdx}</p>
+      <p>{tags}</p>
     </div>
   );
 };
