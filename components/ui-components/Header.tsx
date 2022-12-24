@@ -2,6 +2,7 @@ import Link from "next/link";
 import Button from "./Button";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import Emoji from "./Emoji";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 import Moon from "./Moon";
@@ -10,9 +11,24 @@ import CircleX from "./CircleX";
 import Close from "./Close";
 
 const navigations = [
-  { label: "Work", path: "/work/", color: "text-purple-500" },
-  { label: "About", path: "/about", color: "text-purple-500" },
-  { label: "Lets Talk", path: "/talk", color: "text-purple-500" },
+  {
+    label: "Work",
+    emoji: "💻",
+    path: "/work/",
+    color: "text-purple-500",
+  },
+  {
+    label: "About",
+    emoji: "🧑",
+    path: "/about",
+    color: "text-purple-500",
+  },
+  {
+    label: "Lets Talk",
+    emoji: "☎️",
+    path: "/talk",
+    color: "text-purple-500",
+  },
 ];
 
 const Header = () => {
@@ -41,13 +57,15 @@ const Header = () => {
     if (currentTheme === "dark") {
       return (
         <Button className="" onClick={() => setTheme("light")}>
-          <Moon />
+          {/* <Moon /> */}
+          <Emoji symbol="🌛" label="moon" />
         </Button>
       );
     } else {
       return (
         <Button className="" onClick={() => setTheme("dark")}>
-          <Sun />
+          {/* <Sun /> */}
+          <Emoji symbol="🌞" label="moon" />
         </Button>
       );
     }
@@ -70,10 +88,12 @@ const Header = () => {
           "
         >
           <Logo />
+
           <Button className="md:hidden block z-auto" onClick={() => toggle()}>
             {/* {toggleState ? <Hamburger /> : <CircleX />} */}
             {toggleState ? <Hamburger /> : <Close />}
           </Button>
+
           <nav
             className={`${
               toggleState ? "hidden" : "flex flex-col"
@@ -99,11 +119,12 @@ const Header = () => {
               {navigations.map((nav) => (
                 <Link
                   // className="font-semibold hover:text-yellow-400"
-                  className={`font-semibold md:p-4 py-2 block hover:${nav.color}`}
+                  className={`font-semibold md:p-4 m-1 block hover:bg-gray-100`}
                   href={nav.path}
                   key={nav.path + nav.label}
                 >
                   {nav.label}
+                  <Emoji symbol={nav.emoji} label="sheep" />
                 </Link>
               ))}
               {renderThemeChanger()}
