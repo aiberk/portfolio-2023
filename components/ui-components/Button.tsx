@@ -1,7 +1,7 @@
-import { MouseEventHandler } from "react";
+import { Component, MouseEventHandler, ReactComponentElement } from "react";
 
 type Props = {
-  children?: string;
+  children?: string | ReactComponentElement<any>;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   className: string;
 };
@@ -9,7 +9,7 @@ type Props = {
 const Button = ({ children, onClick, className }: Props) => {
   return (
     <button
-      className={`p-2 rounded-md hover:ring-2 hover:ring-gray-300 ${className}`}
+      className={`p-2 rounded-md hover:opacity-9 ${className}`}
       onClick={onClick}
     >
       {children}
