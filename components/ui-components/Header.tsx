@@ -6,11 +6,13 @@ import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 import Moon from "./Moon";
 import Sun from "./Sun";
+import CircleX from "./CircleX";
+import Close from "./Close";
 
 const navigations = [
-  { label: "Work", path: "/work/", color: "text-red-500" },
-  { label: "About", path: "/about", color: "text-red-500" },
-  { label: "Lets Talk", path: "/talk", color: "text-red-500" },
+  { label: "Work", path: "/work/", color: "text-purple-500" },
+  { label: "About", path: "/about", color: "text-purple-500" },
+  { label: "Lets Talk", path: "/talk", color: "text-purple-500" },
 ];
 
 const Header = () => {
@@ -63,14 +65,14 @@ const Header = () => {
           w-full
           py-4
           md:py-0
-          px-4
+          px-0
           text-lg
-          border-1px-blue
           "
         >
           <Logo />
           <Button className="md:hidden block z-auto" onClick={() => toggle()}>
-            <Hamburger />
+            {/* {toggleState ? <Hamburger /> : <CircleX />} */}
+            {toggleState ? <Hamburger /> : <Close />}
           </Button>
           <nav
             className={`${
@@ -91,13 +93,13 @@ const Header = () => {
               ${
                 toggleState
                   ? "flex-row"
-                  : "flex-col light: bg-white dark:bg-gray-800 h-screen w-screen fixed top-15 left-0 right-0 p-10"
+                  : "flex-col light: bg-white dark:bg-gray-800 h-screen w-screen fixed top-15 left-0 right-0 p-6"
               }`}
             >
               {navigations.map((nav) => (
                 <Link
                   // className="font-semibold hover:text-yellow-400"
-                  className={`font-semibold md:p-4 py-2 block hover:text-purple-500`}
+                  className={`font-semibold md:p-4 py-2 block hover:${nav.color}`}
                   href={nav.path}
                   key={nav.path + nav.label}
                 >

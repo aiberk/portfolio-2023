@@ -73,6 +73,7 @@ const renderOptions = {
       } else if (node.data.target.fields.file.contentType != "video/mp4") {
         return (
           <img
+            className="border-0"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
           />
@@ -87,7 +88,9 @@ export default function Work({ mdx }) {
   console.log(fields.richText);
   return (
     <>
-      <div>{documentToReactComponents(fields.richText, renderOptions)}</div>
+      <div className="border-0 ring-transparent">
+        {documentToReactComponents(fields.richText, renderOptions)}
+      </div>
     </>
   );
 }
