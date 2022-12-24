@@ -1,0 +1,119 @@
+export const MAX_WIDTH = "1100px";
+export const SEPARATOR_GRAY = "rgba(0, 0, 0, 0.08)";
+export const GRAY = "rgb(112,112,112)";
+export const BLACK = "rgb(32,32,32)";
+export const FONT = `system-ui, -apple-system, system-ui, "Segoe UI", "Helvetica Neue", Arial, sans-serif sans-serif !important`;
+export const ASSET_PREFIX = "http://abyiber.com/2021_Assets/";
+export const READING_WIDTH = "720px";
+export const RESUME_URL =
+  "https://drive.google.com/file/d/10rc33wJ4mp0SyFPN4OMpgYf9XXTJ2net/view?usp=sharing";
+export const CARD_PREFIX = "http://www.abyiber.com/work/";
+export const TULIP_INTRO =
+  "Tulip Interfaces is a B2B SaaS platform for manufacturing. The core use case of Tulip is to empower companies by capturing as much data as possible, to then analyze and optimize their operations. The Tulip ecosystem is composed of four parts:";
+export const Lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
+export const PORTFOLIO_CONTENT = [
+  {
+    name: "Tulip Library Part I",
+    link: `${CARD_PREFIX}guidelines.html`,
+    image: `${ASSET_PREFIX}lib3.png`,
+    displayType: "cover",
+    caption: `User Interface guidelines for Citizen developers in manufacturing`,
+    position: "center",
+    color: "white",
+    tags: "Product Designer | November 2020 ",
+  },
+  {
+    name: "Tulip Library Part II",
+    link: `${CARD_PREFIX}library.html`,
+    image: `${ASSET_PREFIX}lib.png`,
+    displayType: "140%",
+    caption: `Web and Mobile App Library for Manufacturing`,
+    position: "-100px 10px",
+    color: "white",
+    tags: "Product Designer & Front End Developer | November - December 2020 ",
+  },
+
+  {
+    name: "Tulip Player Redesign",
+    link: `${CARD_PREFIX}player.html`,
+    image: `${ASSET_PREFIX}login.png`,
+    displayType: "80%",
+    caption: `Applying WCAG 2.0 Standards to Manufacturing`,
+    position: "center",
+    color: "whitesmoke",
+    tags: "Product Designer | March 2020 ",
+  },
+  {
+    name: "Hewlett Packard",
+    link: `${CARD_PREFIX}hp.html`,
+    image: `${ASSET_PREFIX}hp.png`,
+    displayType: "cover",
+    caption: `AR Experiences for Printing`,
+    position: "center",
+    color: "white",
+    tags: "UX Design Internship | May - December 2018 ",
+  },
+  {
+    name: "Flyer: The app to do good.",
+    link: `${CARD_PREFIX}flyer.html`,
+    image: `${ASSET_PREFIX}flyer.png`,
+    displayType: "cover",
+    caption: `Senior Capstone Project`,
+    position: "center",
+    color: "white",
+    tags: "UI and Content Designer | January - May 2019",
+  },
+
+  {
+    name: "Bloom Market: Savannah Food Desserts",
+    link: `${CARD_PREFIX}bloom.html`,
+    image: "http://abyiber.com/2020/assets/img/bloomscreen.png",
+    displayType: "120%",
+    caption: `Social Change through Technology`,
+    position: "center",
+    color: "white",
+    tags: "PM & Interaction Designer | January - May 2019",
+  },
+];
+
+export const MORE_WORK = [
+  { name: "Noto", url: "http://www.abyiber.com/newe/assets/img/n1.png" },
+  { name: "Noto", url: "http://www.abyiber.com/newe/assets/img/noto_5.gif" },
+  { name: "Noto", url: "http://www.abyiber.com/newe/assets/img/noto_comm.gif" },
+  { name: "Handsy", url: "http://www.abyiber.com/newe/assets/img/50.gif" },
+  { name: "Handsy", url: "http://www.abyiber.com/newe/assets/img/m2.gif" },
+  { name: "Handsy", url: "http://www.abyiber.com/newe/assets/img/sto.gif" },
+  {
+    name: "Start Up 2018",
+    url: "http://www.abyiber.com/newe/assets/img/zz4.png",
+  },
+  {
+    name: "Start Up 2018",
+    url: "http://www.abyiber.com/newe/assets/img/zz5.png",
+  },
+  {
+    name: "Puerto Escondido",
+    url: "http://www.abyiber.com/newe/assets/img/l4.png",
+  },
+  {
+    name: "Puerto Escondido",
+    url: "http://www.abyiber.com/newe/assets/img/zz10.png",
+  },
+  {
+    name: "Puerto Escondido",
+    url: "http://www.abyiber.com/newe/assets/img/zz1.png",
+  },
+  {
+    name: "Puerto Escondido",
+    url: "http://www.abyiber.com/newe/assets/img/zz0.png",
+  },
+  {
+    name: "Start Up 2017",
+    url: "http://www.abyiber.com/newe/assets/img/zz4.png",
+  },
+  {
+    name: "Start Up 2017",
+    url: "http://www.abyiber.com/newe/assets/img/zz5.png",
+  },
+  { name: "Ciceana", url: "http://www.abyiber.com/newe/assets/img/cice.png" },
+];

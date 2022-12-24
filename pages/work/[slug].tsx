@@ -73,7 +73,7 @@ const renderOptions = {
       } else if (node.data.target.fields.file.contentType != "video/mp4") {
         return (
           <img
-            className="border-0"
+            className="border-0 ring-transparent"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
           />

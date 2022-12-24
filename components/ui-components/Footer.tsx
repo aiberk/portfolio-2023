@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer>
+    <footer className="font-semibold mt-20 mb-10">
       <span>abyiber</span> &copy; {new Date().getFullYear()} All Rights Reserved
     </footer>
   );

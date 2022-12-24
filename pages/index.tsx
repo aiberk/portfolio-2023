@@ -39,13 +39,14 @@ export default function Home({ mdx }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="grid grid-cols-1 place-content-between gap-12">
         <Hero />
-        {mdx.map((item) => (
-          //User reduce to filter out display=false
-
-          <Card key={item.sys.id} item={item}></Card>
-        ))}
+        <section className="grid grid-cols-2 place-content-between gap-2">
+          {mdx.map((item) => (
+            //User reduce to filter out display=false
+            <Card key={item.sys.id} item={item}></Card>
+          ))}
+        </section>
       </main>
     </>
   );
