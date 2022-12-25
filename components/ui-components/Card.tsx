@@ -29,7 +29,8 @@ const Card = ({ item }: Props) => {
           //User reduce to filter out display=false
           <p
             key={tag}
-            className="flex flex-row gap-1 border-solid border-2 w-1/6 place-content-center rounded-sm"
+            before="|"
+            className="flex flex-row gap-1 before:content-[attr(before)] first:before:content-none"
           >
             {tag}
           </p>
