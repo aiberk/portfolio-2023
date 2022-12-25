@@ -11,6 +11,10 @@ import Arrow from "../../components/ui-components/Arrow";
 import { useTheme } from "next-themes";
 import { UseThemeProps } from "next-themes/dist/types";
 
+type Props = {
+  item: string;
+};
+
 const client = createClient({
   space: config.spaceId,
   accessToken: config.apiKey,
@@ -62,10 +66,12 @@ let randomColor = () => {
 
 const renderOptions = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <div className="font-semibold">{text}</div>,
-    [MARKS.ITALIC]: (text) => <div className="italic">{text}</div>,
-    [MARKS.UNDERLINE]: (text) => <div className="underline">{text}</div>,
-    [MARKS.CODE]: (text) => <div className="code">{text}</div>,
+    [MARKS.BOLD]: (text: string) => <div className="font-semibold">{text}</div>,
+    [MARKS.ITALIC]: (text: string) => <div className="italic">{text}</div>,
+    [MARKS.UNDERLINE]: (text: string) => (
+      <div className="underline">{text}</div>
+    ),
+    [MARKS.CODE]: (text: string) => <div className="code">{text}</div>,
   },
   ///FIX FOR VIDEO
   renderNode: {
@@ -98,6 +104,7 @@ const renderOptions = {
     [BLOCKS.UL_LIST]: (node, children) => (
       <div className=" text-left w-full list-none">{children}</div>
     ),
+
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
         return (

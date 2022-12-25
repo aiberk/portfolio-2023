@@ -4,6 +4,7 @@ import { ContentFulItem } from "../../types/types";
 
 type Props = {
   item: ContentFulItem;
+  before: unknown;
 };
 
 const Card = ({ item }: Props) => {

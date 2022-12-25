@@ -6,6 +6,7 @@ import Emoji from "./Emoji";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 import Close from "./Close";
+import NavItem from "./NavItem";
 
 const navigations = [
   {
@@ -20,12 +21,30 @@ const navigations = [
     path: "/about",
     color: "text-purple-500",
   },
+  // {
+  //   label: "Shop",
+  //   emoji: "🛒",
+  //   path: "/about",
+  //   color: "text-purple-500",
+  // },
+  // {
+  //   label: "Blog",
+  //   emoji: "📰",
+  //   path: "/about",
+  //   color: "text-purple-500",
+  // },
   {
     label: "Lets Talk",
     emoji: "☎️",
     path: "/talk",
     color: "text-purple-500",
   },
+  // {
+  //   label: "Settings",
+  //   emoji: "⚙️",
+  //   path: "/talk",
+  //   color: "text-purple-500",
+  // },
 ];
 
 const Header = () => {
@@ -53,14 +72,14 @@ const Header = () => {
     const currentTheme = theme === "system" ? systemTheme : theme;
     if (currentTheme === "dark") {
       return (
-        <Button className="" onClick={() => setTheme("light")}>
+        <Button className="hover:scale-125" onClick={() => setTheme("light")}>
           {/* <Moon /> */}
           <Emoji symbol="🌛" label="moon" />
         </Button>
       );
     } else {
       return (
-        <Button className="" onClick={() => setTheme("dark")}>
+        <Button className="hover:scale-125" onClick={() => setTheme("dark")}>
           {/* <Sun /> */}
           <Emoji symbol="🌞" label="moon" />
         </Button>
@@ -114,15 +133,19 @@ const Header = () => {
               }`}
             >
               {navigations.map((nav) => (
-                <Link
-                  // className="font-semibold hover:text-yellow-400"
-                  className={`font-semibold md:p-4 m-1 block hover:bg-gray-100`}
-                  href={nav.path}
-                  key={nav.path + nav.label}
+                <Button
+                  className={""}
+                  onClick={() => {
+                    return null;
+                  }}
                 >
-                  {nav.label}
-                  <Emoji symbol={nav.emoji} label="sheep" />
-                </Link>
+                  <NavItem
+                    label={nav.label}
+                    emoji={nav.emoji}
+                    path={nav.path}
+                    color={nav.color}
+                  ></NavItem>
+                </Button>
               ))}
               {renderThemeChanger()}
             </ul>

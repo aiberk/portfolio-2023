@@ -162,3 +162,10 @@ export interface Thumbnail {
 export interface ThumbnailFields {
   file: File;
 }
+
+export interface NavItem {
+  label: string;
+  emoji: string;
+  path: string;
+  color: string;
+}
