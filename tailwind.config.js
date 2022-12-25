@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 module.exports = {
   content: [
     "./pages/*.tsx",
@@ -14,7 +15,8 @@ module.exports = {
       display: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue"],
       body: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue"],
     },
+
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

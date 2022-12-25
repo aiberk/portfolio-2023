@@ -2,7 +2,7 @@ import Link from "next/link";
 import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { config } from "../../config";
 import { ContentFulItem } from "../../types/types";
 import { RichTextType } from "../../types/richTextTypes";
@@ -61,8 +61,43 @@ let randomColor = () => {
 };
 
 const renderOptions = {
+  renderMark: {
+    [MARKS.BOLD]: (text) => <div className="font-semibold">{text}</div>,
+    [MARKS.ITALIC]: (text) => <div className="italic">{text}</div>,
+    [MARKS.UNDERLINE]: (text) => <div className="underline">{text}</div>,
+    [MARKS.CODE]: (text) => <div className="code">{text}</div>,
+  },
   ///FIX FOR VIDEO
   renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <div className="text-left w-full">{children}</div>
+    ),
+    [BLOCKS.HEADING_1]: (node, children) => (
+      <div id={`${children}`} className="text-2xl text-left w-full">
+        {children}
+      </div>
+    ),
+    [BLOCKS.HEADING_2]: (node, children) => (
+      <div className=" text-left w-full">{children}</div>
+    ),
+    [BLOCKS.HEADING_3]: (node, children) => (
+      <div className=" text-left w-full">{children}</div>
+    ),
+    [BLOCKS.HEADING_4]: (node, children) => (
+      <div className=" text-left w-full">{children}</div>
+    ),
+    [BLOCKS.HEADING_5]: (node, children) => (
+      <div className=" text-left w-full">{children}</div>
+    ),
+    [BLOCKS.HEADING_6]: (node, children) => (
+      <div className=" text-left w-full">{children}</div>
+    ),
+    [BLOCKS.OL_LIST]: (node, children) => (
+      <div className=" text-left w-full">{children}</div>
+    ),
+    [BLOCKS.UL_LIST]: (node, children) => (
+      <div className=" text-left w-full list-none">{children}</div>
+    ),
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
       if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
         return (
@@ -99,23 +134,10 @@ const renderOptions = {
 export default function Work({ mdx }) {
   const { systemTheme, theme, setTheme } = useTheme();
   const { fields, sys } = mdx;
+  console.log(fields.richText);
 
   return (
     <>
-      <div
-        className="dark: bg-slate-500"
-        style={{
-          width: "100vw",
-          height: "65vh",
-          // backgroundColor: `${
-          //   theme === "light" ? "rgb(200,200,200)" : "rgb(0,0,0)"
-          // }`,
-          position: "absolute",
-          top: "0",
-          left: "0",
-          zIndex: "-9999",
-        }}
-      ></div>
       <Link
         href={"/"}
         className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold border-zinc-700"
@@ -124,13 +146,17 @@ export default function Work({ mdx }) {
         <Arrow /> Back to Work
       </Link>
       <div className="w-full grid grid-col gap-2 pb-1">
-        <h1 className="text-6xl ">{fields.name}</h1>
-        <span className=" text-teal-600">
+        <div className="grid gri-col gap-2">
           {" "}
-          <h1 className="font-semibold text-2xl">TL;DR:</h1>
-        </span>
-
-        <h1 className="text-2xl">{fields.description}</h1>
+          <h1 className="text-6xl ">{fields.name}</h1>
+          <h2 className="text-2xl">
+            {" "}
+            <span className="font-semibold text-2xl text-red-500">
+              TL;DR: &nbsp;{" "}
+            </span>
+            {fields.description}
+          </h2>
+        </div>
         <Image
           className="w-full  shadow-md shadow-gray-300 rounded-lg"
           src={`https:${fields.thumbnail.fields.file.url}`}
@@ -141,12 +167,12 @@ export default function Work({ mdx }) {
           placeholder="blur"
         ></Image>
       </div>
-      <div className="grid place-content-center gap-2">
+      <div className=" flex flex-col justify-center items-center">
         <main style={{ maxWidth: "100%" }}>
           <br />
         </main>
         <div
-          className="border-0 ring-transparent flex flex-col gap-2"
+          className="border-0 ring-transparent flex flex-col justify-center items-center gap-2"
           style={{ maxWidth: "45rem" }}
         >
           {documentToReactComponents(fields.richText, renderOptions)}
