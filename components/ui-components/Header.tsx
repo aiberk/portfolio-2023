@@ -5,9 +5,6 @@ import { useState, useEffect } from "react";
 import Emoji from "./Emoji";
 import Logo from "./Logo";
 import Hamburger from "./Hamburger";
-import Moon from "./Moon";
-import Sun from "./Sun";
-import CircleX from "./CircleX";
 import Close from "./Close";
 
 const navigations = [

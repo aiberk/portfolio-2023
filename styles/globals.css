@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply max-w-5xl mx-auto px-6;
-    @apply dark:bg-gray-800;
+    @apply md:max-w-5xl sm:max-w-lg mx-auto px-6;
+    @apply dark:bg-zinc-900 text-zinc-800 dark:text-white;
   }
 }

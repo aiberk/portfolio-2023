@@ -6,6 +6,10 @@ import { BLOCKS } from "@contentful/rich-text-types";
 import { config } from "../../config";
 import { ContentFulItem } from "../../types/types";
 import { RichTextType } from "../../types/richTextTypes";
+import Image from "next/image";
+import Arrow from "../../components/ui-components/Arrow";
+import { useTheme } from "next-themes";
+import { UseThemeProps } from "next-themes/dist/types";
 
 const client = createClient({
   space: config.spaceId,
@@ -47,6 +51,15 @@ export async function getStaticProps({ params }) {
 //   children: any;
 // };
 
+let randomColor = () => {
+  let one = Math.floor(Math.random() * 250);
+  let two = Math.floor(Math.random() * 250);
+  let three = Math.floor(Math.random() * 250);
+  let rgb = `rgb(${one},${two},${three})`;
+
+  return rgb;
+};
+
 const renderOptions = {
   ///FIX FOR VIDEO
   renderNode: {
@@ -73,7 +86,7 @@ const renderOptions = {
       } else if (node.data.target.fields.file.contentType != "video/mp4") {
         return (
           <img
-            className="border-0 ring-transparent"
+            className="border-0 ring-transparent shadow-md shadow-gray-300"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
           />
@@ -84,12 +97,57 @@ const renderOptions = {
 };
 
 export default function Work({ mdx }) {
+  const { systemTheme, theme, setTheme } = useTheme();
   const { fields, sys } = mdx;
-  console.log(fields.richText);
+  console.log(fields.thumbnail.fields.file.url);
+  console.log(fields.thumbnail.fields.file.details.image.height);
+
   return (
     <>
-      <div className="border-0 ring-transparent">
-        {documentToReactComponents(fields.richText, renderOptions)}
+      <div
+        className="dark: bg-slate-500"
+        style={{
+          width: "100vw",
+          height: "65vh",
+          // backgroundColor: `${
+          //   theme === "light" ? "rgb(200,200,200)" : "rgb(0,0,0)"
+          // }`,
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "-9999",
+        }}
+      ></div>
+      <Link
+        href={"/"}
+        className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold border-zinc-700"
+        style={{ marginBottom: "4rem", marginTop: "2rem" }}
+      >
+        <Arrow /> Back to Work
+      </Link>
+      <div className="w-full grid grid-col gap-2 pb-1">
+        <h1 className="text-6xl ">{fields.name}</h1>
+        <h1 className="text-6xl">{fields.description}</h1>
+        <Image
+          className="w-full  shadow-md shadow-gray-300 rounded-lg"
+          src={`https:${fields.thumbnail.fields.file.url}`}
+          alt={`${fields.name} thumbnail image`}
+          width={fields.thumbnail.fields.file.details.image.width}
+          height={fields.thumbnail.fields.file.details.image.height}
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
+          placeholder="blur"
+        ></Image>
+      </div>
+      <div className="grid place-content-center gap-2">
+        <main style={{ maxWidth: "100%" }}>
+          <br />
+        </main>
+        <div
+          className="border-0 ring-transparent flex flex-col gap-2"
+          style={{ maxWidth: "45rem" }}
+        >
+          {documentToReactComponents(fields.richText, renderOptions)}
+        </div>
       </div>
     </>
   );
