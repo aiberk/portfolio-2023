@@ -11,7 +11,7 @@ const navigations = [
   {
     label: "Work",
     emoji: "💻",
-    path: "/work/",
+    path: "/",
     color: "text-purple-500",
   },
   {

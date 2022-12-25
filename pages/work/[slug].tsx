@@ -99,8 +99,6 @@ const renderOptions = {
 export default function Work({ mdx }) {
   const { systemTheme, theme, setTheme } = useTheme();
   const { fields, sys } = mdx;
-  console.log(fields.thumbnail.fields.file.url);
-  console.log(fields.thumbnail.fields.file.details.image.height);
 
   return (
     <>
@@ -127,7 +125,12 @@ export default function Work({ mdx }) {
       </Link>
       <div className="w-full grid grid-col gap-2 pb-1">
         <h1 className="text-6xl ">{fields.name}</h1>
-        <h1 className="text-6xl">{fields.description}</h1>
+        <span className=" text-teal-600">
+          {" "}
+          <h1 className="font-semibold text-2xl">TL;DR:</h1>
+        </span>
+
+        <h1 className="text-2xl">{fields.description}</h1>
         <Image
           className="w-full  shadow-md shadow-gray-300 rounded-lg"
           src={`https:${fields.thumbnail.fields.file.url}`}

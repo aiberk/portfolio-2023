@@ -5,7 +5,7 @@ type Props = {};
 const Emoji = (props: Props) => {
   return (
     <span
-      className="emoji p-2 text-2xl"
+      className="emoji p-1 text-xl"
       role="img"
       aria-label={props.label ? props.label : ""}
       aria-hidden={props.label ? "false" : "true"}

@@ -27,7 +27,10 @@ const Card = ({ item }: Props) => {
       <div className="flex flex-row gap-1">
         {tags.map((tag) => (
           //User reduce to filter out display=false
-          <p className="flex flex-row gap-1 border-solid border-2 w-1/6 place-content-center rounded-sm">
+          <p
+            key={tag}
+            className="flex flex-row gap-1 border-solid border-2 w-1/6 place-content-center rounded-sm"
+          >
             {tag}
           </p>
         ))}
