@@ -1,13 +1,14 @@
 import React from "react";
+import { IconStrokeWidth } from "../../types/types";
 
-const Hamburger = () => {
+const Hamburger = (props: IconStrokeWidth) => {
   return (
     <svg
       className="h-6 w-6 cursor-pointer"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
+      strokeWidth={props.strokeWidth ? props.strokeWidth : 1.5}
       stroke="currentColor"
     >
       <path

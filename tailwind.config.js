@@ -16,7 +16,15 @@ module.exports = {
       body: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue"],
     },
 
-    extend: {},
+    extend: {
+      boxShadow: {
+        "3xl": `rgb(0 0 0 / 10%) 0px 0px 0px 0.03125rem,
+        rgb(0 0 0 / 7%) 0px 0px 1rem 0px`,
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
+
+// box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 0.03125rem,
+//     rgb(0 0 0 / 7%) 0px 0px 1rem 0px;

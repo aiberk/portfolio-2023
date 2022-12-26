@@ -37,11 +37,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-// Get content for individual pages
-// 1MHYFjc42C60nHqyeX3ZGv
-// 3t0TpvPZnFD6rApqrS2ASZ
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: "mdx",
     "sys.id": params.slug,
@@ -49,17 +46,13 @@ export async function getStaticProps({ params }) {
   return {
     props: { mdx: items[0] },
   };
-}
-
-// export type Props = {
-//   children: any;
-// };
+};
 
 let randomColor = () => {
-  let one = Math.floor(Math.random() * 250);
-  let two = Math.floor(Math.random() * 250);
-  let three = Math.floor(Math.random() * 250);
-  let rgb = `rgb(${one},${two},${three})`;
+  const one = Math.floor(Math.random() * 250);
+  const two = Math.floor(Math.random() * 250);
+  const three = Math.floor(Math.random() * 250);
+  const rgb = `rgb(${one},${two},${three})`;
 
   return rgb;
 };
@@ -142,7 +135,7 @@ const renderOptions = {
         );
       } else if (node.data.target.fields.file.contentType != "video/mp4") {
         return (
-          <img
+          <Image
             className="border-0 ring-transparent"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
@@ -167,10 +160,14 @@ export default function Work({ mdx }) {
       >
         <Arrow /> Back to Work
       </Link>
-      <div className="w-full grid grid-col gap-2 pb-1">
-        <div className="grid gri-col gap-2">
+      <div className="w-full grid grid-colpb-1" style={{ gap: "2rem" }}>
+        <div
+          className="grid gri-col 
+        "
+          style={{ gap: "2rem" }}
+        >
           {" "}
-          <h1 className="text-6xl ">{fields.name}</h1>
+          <h1 className="text-6xl">{fields.name}</h1>
           <h2 className="text-2xl">
             {" "}
             <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">

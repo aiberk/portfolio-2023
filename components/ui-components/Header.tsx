@@ -15,12 +15,12 @@ const navigations = [
     path: "/",
     color: "text-purple-500",
   },
-  {
-    label: "About",
-    emoji: "🧑",
-    path: "/about",
-    color: "text-purple-500",
-  },
+  // {
+  //   label: "About",
+  //   emoji: "🧑",
+  //   path: "/about",
+  //   color: "text-purple-500",
+  // },
   {
     label: "Shop",
     emoji: "🛒",

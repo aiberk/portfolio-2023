@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContentFulItem } from "../../types/types";
 
+// box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 0.03125rem,
+//     rgb(0 0 0 / 7%) 0px 0px 1rem 0px;
+
 type Props = {
   item: ContentFulItem;
   before: unknown;
@@ -11,7 +14,7 @@ const Card = ({ item }: Props) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
     <Link href={`/work/${item.sys.id}`} className={``}>
-      <div className=" w-full h-78 overflow-hidden grid content-center shadow-md shadow-gray-300 rounded-lg ">
+      <div className=" w-full h-78 overflow-hidden grid content-center rounded-lg shadow-xl">
         <Image
           className="w-full"
           src={`https:${thumbnail.fields.file.url}`}
