@@ -99,10 +99,25 @@ const renderOptions = {
       <div className=" text-left w-full">{children}</div>
     ),
     [BLOCKS.OL_LIST]: (node, children) => (
-      <div className=" text-left w-full">{children}</div>
+      <ol
+        role="list"
+        className="marker:text-sky-400 text-left w-full list-decimal"
+      >
+        {children}
+      </ol>
     ),
     [BLOCKS.UL_LIST]: (node, children) => (
-      <div className=" text-left w-full list-none">{children}</div>
+      <ul
+        role="list"
+        className="marker:text-sky-400 list-disc text-left w-full"
+      >
+        {children}
+      </ul>
+    ),
+    [BLOCKS.LIST_ITEM]: (node, children) => (
+      <li className="text-left w-full flex flex-row ">
+        &nbsp;-&nbsp;{children}
+      </li>
     ),
 
     [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
@@ -158,7 +173,7 @@ export default function Work({ mdx }) {
           <h1 className="text-6xl ">{fields.name}</h1>
           <h2 className="text-2xl">
             {" "}
-            <span className="font-semibold text-2xl text-red-500">
+            <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
               TL;DR: &nbsp;{" "}
             </span>
             {fields.description}

@@ -21,18 +21,18 @@ const navigations = [
     path: "/about",
     color: "text-purple-500",
   },
-  // {
-  //   label: "Shop",
-  //   emoji: "🛒",
-  //   path: "/about",
-  //   color: "text-purple-500",
-  // },
-  // {
-  //   label: "Blog",
-  //   emoji: "📰",
-  //   path: "/about",
-  //   color: "text-purple-500",
-  // },
+  {
+    label: "Shop",
+    emoji: "🛒",
+    path: "/about",
+    color: "text-purple-500",
+  },
+  {
+    label: "Blog",
+    emoji: "📰",
+    path: "/about",
+    color: "text-purple-500",
+  },
   {
     label: "Lets Talk",
     emoji: "☎️",
@@ -64,7 +64,6 @@ const Header = () => {
 
   const toggle = () => {
     setToggleState(toggleState === false ? true : false);
-    console.log(toggleState);
   };
 
   const renderThemeChanger = () => {
@@ -73,14 +72,12 @@ const Header = () => {
     if (currentTheme === "dark") {
       return (
         <Button className="hover:scale-125" onClick={() => setTheme("light")}>
-          {/* <Moon /> */}
           <Emoji symbol="🌛" label="moon" />
         </Button>
       );
     } else {
       return (
         <Button className="hover:scale-125" onClick={() => setTheme("dark")}>
-          {/* <Sun /> */}
           <Emoji symbol="🌞" label="moon" />
         </Button>
       );
@@ -106,7 +103,6 @@ const Header = () => {
           <Logo />
 
           <Button className="md:hidden block z-auto" onClick={() => toggle()}>
-            {/* {toggleState ? <Hamburger /> : <CircleX />} */}
             {toggleState ? <Hamburger /> : <Close />}
           </Button>
 
@@ -133,19 +129,13 @@ const Header = () => {
               }`}
             >
               {navigations.map((nav) => (
-                <Button
-                  className={""}
-                  onClick={() => {
-                    return null;
-                  }}
-                >
-                  <NavItem
-                    label={nav.label}
-                    emoji={nav.emoji}
-                    path={nav.path}
-                    color={nav.color}
-                  ></NavItem>
-                </Button>
+                <NavItem
+                  key={nav.label + nav.color + nav.emoji + nav.path}
+                  label={nav.label}
+                  emoji={nav.emoji}
+                  path={nav.path}
+                  color={nav.color}
+                ></NavItem>
               ))}
               {renderThemeChanger()}
             </ul>

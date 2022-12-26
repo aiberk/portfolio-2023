@@ -169,3 +169,7 @@ export interface NavItem {
   path: string;
   color: string;
 }
+
+export interface IconStrokeWidth {
+  strokeWidth?: string;
+}

@@ -1,14 +1,13 @@
 import React from "react";
+import { IconStrokeWidth } from "../../types/types";
 
-type Props = {};
-
-const CircleX = (props: Props) => {
+const CircleX = (props: IconStrokeWidth) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
+      strokeWidth={props.strokeWidth ? props.strokeWidth : 1.5}
       stroke="currentColor"
       className="w-6 h-6"
     >

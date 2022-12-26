@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue"],
-      serif: ["ui-serif", "system-ui"],
+      serif: ["Arial", "ui-serif", "system-ui"],
       mono: ["ui-monospace", "SFMono-Regular"],
       display: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue"],
       body: ["system-ui", "-apple-system", "Segoe UI", "Helvetica Neue"],
