@@ -68,6 +68,31 @@ const renderOptions = {
   },
   ///FIX FOR VIDEO
   renderNode: {
+    [BLOCKS.HR]: (node, children) => (
+      <hr
+        className="w-full"
+        // style={{ border: "10px solid green", borderRadius: "5px" }}
+      ></hr>
+    ),
+    [BLOCKS.TABLE]: (node, children) => (
+      <table className="w-full">
+        <tbody>{children}</tbody>
+      </table>
+    ),
+    [BLOCKS.TABLE_ROW]: (node, children) => (
+      <tr className="p-2" style={{ borderBottom: "solid 1px whitesmoke" }}>
+        {children}
+      </tr>
+    ),
+    [BLOCKS.TABLE_CELL]: (node, children) => (
+      <td className="p-2">{children}</td>
+    ),
+    [BLOCKS.TABLE_HEADER_CELL]: (node, children) => (
+      <th className="p-2" style={{ backgroundColor: "whitesmoke" }}>
+        {children}
+      </th>
+    ),
+
     [BLOCKS.PARAGRAPH]: (node, children) => (
       <p className="text-left w-full">{children}</p>
     ),
@@ -123,21 +148,14 @@ const renderOptions = {
         );
       }
     },
-    [INLINES.HYPERLINK]: (node, children) => {
-      if (node.data.uri.includes("youtube.com/embed")) {
-        return (
-          <span>
-            <iframe
-              title="Unique Title 002"
-              src={children}
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </span>
-        );
-      }
-    },
+    [INLINES.HYPERLINK]: (node, children) => (
+      <Link className="font-semibold dark: text-blue-500" href={node.data.uri}>
+        <u>
+          {" "}
+          <code>{children}</code>
+        </u>
+      </Link>
+    ),
 
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       // render the EMBEDDED_ASSET as you need
@@ -152,8 +170,8 @@ const renderOptions = {
             className="border-0 ring-transparent"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
-            width={100}
-            height={100}
+            width={node.data.target.fields.file.details.image.width}
+            height={node.data.target.fields.file.details.image.height}
           />
         );
       } else if (node.data.target.fields.file.contentType === "text/html") {
