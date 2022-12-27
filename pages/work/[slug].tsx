@@ -215,7 +215,7 @@ export default function Work({ mdx }) {
           style={{ gap: "2rem" }}
         >
           {" "}
-          <h1 className="text-6xl">{fields.name}</h1>
+          <h1 className="text-6xl font-semibold">{fields.name}</h1>
           <h2 className="text-2xl">
             {" "}
             <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">

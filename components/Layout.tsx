@@ -1,16 +1,23 @@
 import Header from "./ui-components/Header";
 import Footer from "./ui-components/Footer";
+import { Figtree } from "@next/font/google";
+
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-figtree",
+});
 
 interface Item {
-  [key: string]: [value: string | boolean | number | [] | []];
+  children: React.ReactNode;
 }
 
 export default function Layout({ children }: Item) {
   return (
-    <div>
+    <main className={`font-Figtree`}>
       <Header />
       <div>{children}</div>
       <Footer />
-    </div>
+    </main>
   );
 }
