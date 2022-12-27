@@ -139,6 +139,8 @@ const renderOptions = {
             className="border-0 ring-transparent"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
+            width={node.data.target.fields.file.details.image.width}
+            height={node.data.target.fields.file.details.image.height}
           />
         );
       }
@@ -200,8 +202,3 @@ export default function Work({ mdx }) {
     </>
   );
 }
-
-// http://localhost:3000/work/1MHYFjc42C60nHqyeX3ZGv
-//[0].fields.richText
-// http://localhost:3000/work/3t0TpvPZnFD6rApqrS2ASZ
-// https:////videos.ctfassets.net/9ml0r0lfbqrn/1J6yhZzWqpPydHhtJaAI6T/475cba757bda354ab7b928ed48112191/hw4-test0000-0701.mp4

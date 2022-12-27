@@ -13,8 +13,9 @@ type Props = {
 const Card = ({ item }: Props) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
-    <Link href={`/work/${item.sys.id}`} className={``}>
-      <div className=" w-full h-78 overflow-hidden grid content-center rounded-lg shadow-xl">
+    <Link href={`/work/${item.sys.id}`} className="text-xl">
+      {/* className={`border-8 border-sky-500`} */}
+      <div className=" w-full overflow-hidden grid gap-2 content-center rounded-lg shadow-xl mb-4">
         <Image
           className="w-full"
           src={`https:${thumbnail.fields.file.url}`}
@@ -25,8 +26,8 @@ const Card = ({ item }: Props) => {
           placeholder="blur"
         />
       </div>
-
-      <p>{description}</p>
+      <p className="truncate font-semibold">{name}</p>
+      <p className="truncate ">{description}</p>
       <p>{mdx}</p>
       <div className="flex flex-row gap-1">
         {tags.map((tag) => (
@@ -34,7 +35,7 @@ const Card = ({ item }: Props) => {
           <p
             key={tag}
             before="|"
-            className="flex flex-row gap-1 before:content-[attr(before)] first:before:content-none"
+            className="mt-2 text-gray-600 flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-sm"
           >
             {tag}
           </p>
