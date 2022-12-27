@@ -7,7 +7,7 @@ import { ContentFulItem } from "../../types/types";
 
 type Props = {
   item: ContentFulItem;
-  before: unknown;
+  before: HTMLParagraphElement;
 };
 
 const Card = ({ item }: Props) => {

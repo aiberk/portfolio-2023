@@ -2,7 +2,7 @@ import Link from "next/link";
 import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { config } from "../../config";
 import { ContentFulItem } from "../../types/types";
 import { RichTextType } from "../../types/richTextTypes";
@@ -69,27 +69,25 @@ const renderOptions = {
   ///FIX FOR VIDEO
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => (
-      <div className="text-left w-full">{children}</div>
+      <p className="text-left w-full">{children}</p>
     ),
     [BLOCKS.HEADING_1]: (node, children) => (
-      <div id={`${children}`} className="text-2xl text-left w-full">
-        {children}
-      </div>
+      <h1 className="text-2xl text-left w-full">{children}</h1>
     ),
     [BLOCKS.HEADING_2]: (node, children) => (
-      <div className=" text-left w-full">{children}</div>
+      <h2 className=" text-left w-full">{children}</h2>
     ),
     [BLOCKS.HEADING_3]: (node, children) => (
-      <div className=" text-left w-full">{children}</div>
+      <h3 className=" text-left w-full">{children}</h3>
     ),
     [BLOCKS.HEADING_4]: (node, children) => (
-      <div className=" text-left w-full">{children}</div>
+      <h4 className=" text-left w-full">{children}</h4>
     ),
     [BLOCKS.HEADING_5]: (node, children) => (
-      <div className=" text-left w-full">{children}</div>
+      <h5 className=" text-left w-full">{children}</h5>
     ),
     [BLOCKS.HEADING_6]: (node, children) => (
-      <div className=" text-left w-full">{children}</div>
+      <h6 className=" text-left w-full">{children}</h6>
     ),
     [BLOCKS.OL_LIST]: (node, children) => (
       <ol
@@ -125,6 +123,21 @@ const renderOptions = {
         );
       }
     },
+    [INLINES.HYPERLINK]: (node, children) => {
+      if (node.data.uri.includes("youtube.com/embed")) {
+        return (
+          <span>
+            <iframe
+              title="Unique Title 002"
+              src={children}
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </span>
+        );
+      }
+    },
 
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
       // render the EMBEDDED_ASSET as you need
@@ -133,15 +146,30 @@ const renderOptions = {
         return (
           <video controls src={`https://${node.data.target.fields.file.url}`} />
         );
-      } else if (node.data.target.fields.file.contentType != "video/mp4") {
+      } else if (node.data.target.fields.file.contentType === "image/webp") {
         return (
           <Image
             className="border-0 ring-transparent"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
-            width={node.data.target.fields.file.details.image.width}
-            height={node.data.target.fields.file.details.image.height}
+            width={100}
+            height={100}
           />
+        );
+      } else if (node.data.target.fields.file.contentType === "text/html") {
+        return (
+          // WBPrJSw7yQA
+          // "WBPrJSw7yQA"
+
+          <iframe
+            width="100%"
+            height="405"
+            src={`https://www.youtube.com/embed/${node.data.target.fields.file.fileName}`}
+            title="Learn TypeScript in 50 Minutes - Tutorial for Beginners"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         );
       }
     },
@@ -202,3 +230,7 @@ export default function Work({ mdx }) {
     </>
   );
 }
+
+// <iframe width="1279" height="719" src="https://www.youtube.com/embed/WBPrJSw7yQA" title="Learn TypeScript in 50 Minutes - Tutorial for Beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+// https://www.youtube.com/watch?v=JMsNslI8KoY
