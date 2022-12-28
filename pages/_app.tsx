@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import { ThemeProvider } from "next-themes";
 import { Figtree } from "@next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </ThemeProvider>
   );
 }
