@@ -41,7 +41,7 @@ export default function Home({ mdx }: Props) {
       </Head>
       <main className="grid grid-cols-1 place-content-between gap-12">
         <Hero />
-        <section className="grid grid-cols-2 place-content-between gap-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 place-content-between gap-10">
           {mdx.map((item) => (
             //User reduce to filter out display=false
             <Card key={item.sys.id} item={item}></Card>

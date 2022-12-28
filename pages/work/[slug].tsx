@@ -134,8 +134,11 @@ const renderOptions = {
       </ul>
     ),
     [BLOCKS.LIST_ITEM]: (node, children) => (
-      <li className="text-left w-full flex flex-row ">
-        &nbsp;-&nbsp;{children}
+      <li
+        before="·"
+        className="text-left w-full flex flex-row  before:content-[attr(before)]"
+      >
+        &nbsp;&nbsp;{children}
       </li>
     ),
 
@@ -187,9 +190,9 @@ const renderOptions = {
             height="405"
             src={`https://www.youtube.com/embed/${node.data.target.fields.file.fileName}`}
             title="Learn TypeScript in 50 Minutes - Tutorial for Beginners"
-            frameborder="0"
+            // frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         );
       }
@@ -206,7 +209,7 @@ export default function Work({ mdx }) {
     <>
       <Link
         href={"/"}
-        className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold bg-white text-black hover:bg-black hover:text-white"
+        className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold  text-black "
         style={{
           marginBottom: "4rem",
           marginTop: "2rem",
@@ -242,8 +245,12 @@ export default function Work({ mdx }) {
           alt={`${fields.name} thumbnail image`}
           width={fields.thumbnail.fields.file.details.image.width}
           height={fields.thumbnail.fields.file.details.image.height}
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
           placeholder="blur"
+          priority
         ></Image>
       </div>
       <div className=" flex flex-col justify-center items-center">
@@ -260,7 +267,3 @@ export default function Work({ mdx }) {
     </>
   );
 }
-
-// <iframe width="1279" height="719" src="https://www.youtube.com/embed/WBPrJSw7yQA" title="Learn TypeScript in 50 Minutes - Tutorial for Beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-// https://www.youtube.com/watch?v=JMsNslI8KoY

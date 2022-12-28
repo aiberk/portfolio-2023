@@ -12,9 +12,9 @@ type Props = {
 const Card = ({ item }: Props) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
-    <Link href={`/work/${item.sys.id}`} className="text-xl">
+    <Link href={`/work/${item.sys.id}`} className="text-xl w-full">
       {/* className={`border-8 border-sky-500`} */}
-      <div className=" w-full overflow-hidden grid gap-2 content-center rounded-lg shadow-xl mb-4">
+      <div className="w-full overflow-hidden grid gap-2 content-center rounded-lg shadow-xl mb-4">
         <Image
           className="w-full"
           src={`https:${thumbnail.fields.file.url}`}
@@ -23,6 +23,9 @@ const Card = ({ item }: Props) => {
           height={thumbnail.fields.file.details.image.height}
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
           placeholder="blur"
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
         />
       </div>
       <p className="truncate font-semibold">{name}</p>
