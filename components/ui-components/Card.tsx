@@ -21,6 +21,7 @@ const Card = ({ item }: Props) => {
           alt={`${name} thumbnail image`}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
+          priority
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
           placeholder="blur"
           sizes="(max-width: 768px) 100vw,
