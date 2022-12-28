@@ -221,14 +221,17 @@ export default function Work({ mdx }) {
       >
         <Arrow /> Back to Work
       </Link>
-      <div className="w-full grid grid-colpb-1" style={{ gap: "2rem" }}>
+      <div className="w-full grid grid-col-1" style={{ gap: "2rem" }}>
         <div
           className="grid gri-col 
         "
           style={{ gap: "2rem" }}
         >
           {" "}
-          <h1 className="text-6xl font-semibold tracking-tight">
+          <h1
+            className="font-semibold tracking-tight"
+            style={{ fontSize: "3.7rem", lineHeight: "1" }}
+          >
             {fields.name}
           </h1>
           <h2 className="text-2xl">
