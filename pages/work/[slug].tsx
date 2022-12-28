@@ -102,6 +102,9 @@ export default function Work({ mdx }) {
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
           placeholder="blur"
           priority
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
         ></Image>
       </div>
       <div className=" flex flex-col justify-center items-center">
