@@ -172,13 +172,12 @@ const renderOptions = {
         );
       } else if (node.data.target.fields.file.contentType === "image/webp") {
         return (
-          <Image
+          <img
             className="border-0 ring-transparent"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
             width={node.data.target.fields.file.details.image.width}
             height={node.data.target.fields.file.details.image.height}
-            priority
           />
         );
       } else if (node.data.target.fields.file.contentType === "text/html") {
