@@ -1,3 +1,10 @@
+export interface CSSattributeTypes {
+  CSSInlineAttribute: DetailedHTMLProps<
+    HTMLAttributes<HTMLParagraphElement>,
+    HTMLParagraphElement
+  >;
+}
+
 export interface ContentFulItem {
   metadata: Metadata;
   sys: TargetSys;

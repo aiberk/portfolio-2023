@@ -206,8 +206,15 @@ export default function Work({ mdx }) {
     <>
       <Link
         href={"/"}
-        className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold border-zinc-700"
-        style={{ marginBottom: "4rem", marginTop: "2rem" }}
+        className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold bg-white text-black hover:bg-black hover:text-white"
+        style={{
+          marginBottom: "4rem",
+          marginTop: "2rem",
+          border: "1px solid lightgray",
+          width: "10rem",
+          padding: "0.4rem",
+          borderRadius: "5px",
+        }}
       >
         <Arrow /> Back to Work
       </Link>

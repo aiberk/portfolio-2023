@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ContentFulItem } from "../../types/types";
+import { ContentFulItem, CSSattributeTypes } from "../../types/types";
 
 // box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 0.03125rem,
 //     rgb(0 0 0 / 7%) 0px 0px 1rem 0px;
 
 type Props = {
   item: ContentFulItem;
-  before: HTMLParagraphElement;
 };
 
 const Card = ({ item }: Props) => {
@@ -32,13 +31,13 @@ const Card = ({ item }: Props) => {
       <div className="flex flex-row gap-1">
         {tags.map((tag) => (
           //User reduce to filter out display=false
-          <p
+          <sub
             key={tag}
             before="|"
-            className="mt-2 text-gray-600 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-sm"
+            className="mt-2 text-gray-800 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-md"
           >
             {tag}
-          </p>
+          </sub>
         ))}
       </div>
     </Link>

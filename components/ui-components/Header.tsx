@@ -27,18 +27,19 @@ const navigations = [
   //   path: "/about",
   //   color: "text-purple-500",
   // },
-  // {
-  //   label: "Shop",
-  //   emoji: "🛒",
-  //   path: "/about",
-  //   color: "text-purple-500",
-  // },
-  // {
-  //   label: "Blog",
-  //   emoji: "📰",
-  //   path: "/about",
-  //   color: "text-purple-500",
-  // },
+  {
+    label: "Blog",
+    emoji: "📰",
+    path: "/about",
+    color: "text-purple-500",
+  },
+  {
+    label: "Shop",
+    emoji: "🛒",
+    path: "/about",
+    color: "text-purple-500",
+  },
+
   {
     label: "Lets Talk",
     emoji: "☎️",
