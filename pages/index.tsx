@@ -31,13 +31,31 @@ export default function Home({ mdx }: Props) {
   return (
     <>
       <Head>
-        <title>Abraham Aby Iberkleids Portfolio</title>
+        <title>Abraham Aby Iberkleid's Portfolio</title>
         <meta
           name="description"
           content="Abraham 'Aby' Iberkleid's Portfolio"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Abraham 'Aby' Iberkleid's Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Abraham 'Aby' Iberkleid's Portfolio"
+        />
+        <meta property="og:image" content="" />
+        <meta property="og:image:alt" content="" />
+        <meta property="og:url" content="abyiber.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="abyiber.com" />
+        <meta
+          name="keywords"
+          content="Software Development, Front-End, UX Design, Software Engineer, Product Designer, Full Stack Development"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main className="grid grid-cols-1 place-content-between gap-12">
         <Hero />
@@ -51,3 +69,19 @@ export default function Home({ mdx }: Props) {
     </>
   );
 }
+
+// <Head>
+// <title>{headTitle}</title>
+{
+  /* <meta property="og:title" content={headTitle} />
+<meta property="og:description" content={headDescription} />
+<meta property="og:image" content="" />
+<meta property="og:image:alt" content="" />
+<meta property="og:url" content="tulip.co/library/apps/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="tulip.co" />
+<meta name="keywords" content="Apps, Manufacturing, Library" /> */
+}
+// <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+// <meta name="description" content={headDescription} />
+// </Head>
