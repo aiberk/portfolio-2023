@@ -27,10 +27,7 @@ export const renderOptionsForContentful = {
   ///FIX FOR VIDEO
   renderNode: {
     [BLOCKS.HR]: (node: RichTextNodeType, children: RichTextContent) => (
-      <hr
-        className="w-full"
-        // style={{ border: "10px solid green", borderRadius: "5px" }}
-      ></hr>
+      <hr className="w-full"></hr>
     ),
     [BLOCKS.TABLE]: (node: RichTextNodeType, children: any) => (
       <table
