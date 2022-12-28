@@ -246,9 +246,6 @@ export default function Work({ mdx }) {
           alt={`${fields.name} thumbnail image`}
           width={fields.thumbnail.fields.file.details.image.width}
           height={fields.thumbnail.fields.file.details.image.height}
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADA..."
           placeholder="blur"
           priority
