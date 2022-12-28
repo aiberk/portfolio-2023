@@ -178,6 +178,7 @@ const renderOptions = {
             alt={node.data.target.fields.description}
             width={node.data.target.fields.file.details.image.width}
             height={node.data.target.fields.file.details.image.height}
+            priority
           />
         );
       } else if (node.data.target.fields.file.contentType === "text/html") {
