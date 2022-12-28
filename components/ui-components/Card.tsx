@@ -35,7 +35,7 @@ const Card = ({ item }: Props) => {
           <p
             key={tag}
             before="|"
-            className="mt-2 text-gray-600 flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-sm"
+            className="mt-2 text-gray-600 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-sm"
           >
             {tag}
           </p>

@@ -2,7 +2,7 @@ import Button from "../ui-components/Button";
 const Hero = () => {
   return (
     <section className="mt-12">
-      <h1 className="text-6xl font-semibold">
+      <h1 className="text-6xl font-semibold tracking-tight">
         Hello I am Aby
         <br />I am an{" "}
         <span className="bg-clip-text light:text-black dark:text-transparent bg-gradient-to-r from-pink-500 to-violet-500">

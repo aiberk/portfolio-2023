@@ -15,28 +15,34 @@ const navigations = [
     path: "/",
     color: "text-purple-500",
   },
+  {
+    label: "Resume",
+    emoji: "📃",
+    path: "/",
+    color: "text-purple-500",
+  },
   // {
   //   label: "About",
   //   emoji: "🧑",
   //   path: "/about",
   //   color: "text-purple-500",
   // },
-  {
-    label: "Shop",
-    emoji: "🛒",
-    path: "/about",
-    color: "text-purple-500",
-  },
-  {
-    label: "Blog",
-    emoji: "📰",
-    path: "/about",
-    color: "text-purple-500",
-  },
+  // {
+  //   label: "Shop",
+  //   emoji: "🛒",
+  //   path: "/about",
+  //   color: "text-purple-500",
+  // },
+  // {
+  //   label: "Blog",
+  //   emoji: "📰",
+  //   path: "/about",
+  //   color: "text-purple-500",
+  // },
   {
     label: "Lets Talk",
     emoji: "☎️",
-    path: "/talk",
+    path: "/",
     color: "text-purple-500",
   },
   // {

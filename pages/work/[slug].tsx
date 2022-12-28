@@ -75,12 +75,15 @@ const renderOptions = {
       ></hr>
     ),
     [BLOCKS.TABLE]: (node, children) => (
-      <table className="w-full">
+      <table
+        className="w-full border-solid border-2 rounded-md"
+        style={{ border: "solid 2px whitesmoke" }}
+      >
         <tbody>{children}</tbody>
       </table>
     ),
     [BLOCKS.TABLE_ROW]: (node, children) => (
-      <tr className="p-2" style={{ borderBottom: "solid 1px whitesmoke" }}>
+      <tr className="p-2" style={{ borderBottom: "solid 2px whitesmoke" }}>
         {children}
       </tr>
     ),
@@ -88,7 +91,7 @@ const renderOptions = {
       <td className="p-2">{children}</td>
     ),
     [BLOCKS.TABLE_HEADER_CELL]: (node, children) => (
-      <th className="p-2" style={{ backgroundColor: "whitesmoke" }}>
+      <th className="p-2" style={{}}>
         {children}
       </th>
     ),
@@ -215,7 +218,9 @@ export default function Work({ mdx }) {
           style={{ gap: "2rem" }}
         >
           {" "}
-          <h1 className="text-6xl font-semibold">{fields.name}</h1>
+          <h1 className="text-6xl font-semibold tracking-tight">
+            {fields.name}
+          </h1>
           <h2 className="text-2xl">
             {" "}
             <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
@@ -225,7 +230,7 @@ export default function Work({ mdx }) {
           </h2>
         </div>
         <Image
-          className="w-full  shadow-md shadow-gray-300 rounded-lg"
+          className="w-full shadow-xl rounded-lg"
           src={`https:${fields.thumbnail.fields.file.url}`}
           alt={`${fields.name} thumbnail image`}
           width={fields.thumbnail.fields.file.details.image.width}
