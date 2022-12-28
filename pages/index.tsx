@@ -38,14 +38,8 @@ export default function Home({ mdx }: Props) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:title"
-          content="Abraham 'Aby' Iberkleid's Portfolio"
-        />
-        <meta
-          property="og:description"
-          content="Abraham 'Aby' Iberkleid's Portfolio"
-        />
+        <meta property="og:title" content="Aby Iberkleid's Portfolio" />
+        <meta property="og:description" content="Aby Iberkleid's Portfolio" />
         <meta property="og:image" content="" />
         <meta property="og:image:alt" content="" />
         <meta property="og:url" content="abyiber.com/" />

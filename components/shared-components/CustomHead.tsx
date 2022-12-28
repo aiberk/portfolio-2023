@@ -22,7 +22,7 @@ const CustomHead = ({ item }: Props) => {
       />
       <meta
         property="og:image:alt"
-        content={`Selected User Interface screenshot from  ${description}`}
+        content={`Selected User Interface screenshot from  ${name}`}
       />
       <meta property="og:url" content={`abyiber.com/work/${name}`} />
       <meta property="og:type" content="website" />

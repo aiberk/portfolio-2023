@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { createClient } from "contentful";
+import { Asset, createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { config } from "../../config";
-import { ContentFulItem } from "../../types/types";
+import { ContentFulItem, RichText } from "../../types/types";
 import { RichTextType } from "../../types/richTextTypes";
 import Image from "next/image";
 import Arrow from "../../components/ui-components/Arrow";
@@ -11,9 +11,10 @@ import { useTheme } from "next-themes";
 import { UseThemeProps } from "next-themes/dist/types";
 import { renderOptionsForContentful } from "../../components/utils/renderOptions";
 import CustomHead from "../../components/shared-components/CustomHead";
+import { RichTextContent } from "contentful";
 
 type Props = {
-  item: string;
+  mdx: Asset;
 };
 
 const client = createClient({

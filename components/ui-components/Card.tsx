@@ -35,7 +35,7 @@ const Card = ({ item }: Props) => {
         {tags.map((tag) => (
           //User reduce to filter out display=false
           <sub
-            key={tag}
+            key={Date.now() + tag}
             before="|"
             className="mt-2 text-gray-800 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-md"
           >
