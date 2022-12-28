@@ -10,6 +10,7 @@ import Arrow from "../../components/ui-components/Arrow";
 import { useTheme } from "next-themes";
 import { UseThemeProps } from "next-themes/dist/types";
 import { renderOptionsForContentful } from "../../components/utils/renderOptions";
+import CustomHead from "../../components/shared-components/CustomHead";
 
 type Props = {
   item: string;
@@ -55,6 +56,7 @@ export default function Work({ mdx }) {
 
   return (
     <>
+      <CustomHead item={mdx} />
       <Link
         href={"/"}
         className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold  text-black "
