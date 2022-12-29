@@ -1,5 +1,5 @@
 import test from "node:test";
-import { ContentFulItem } from "../../types/types";
+import { ContentFulItem } from "../types/types";
 
 type Props = {
   items: Array<ContentFulItem>;

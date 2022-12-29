@@ -21,12 +21,12 @@ const navigations = [
   //   path: "/",
   //   color: "text-purple-500",
   // },
-  // {
-  //   label: "About",
-  //   emoji: "🧑",
-  //   path: "/about",
-  //   color: "text-purple-500",
-  // },
+  {
+    label: "About",
+    emoji: "🧑",
+    path: "/about",
+    color: "text-purple-500",
+  },
   // {
   //   label: "Blog",
   //   emoji: "📰",
@@ -43,7 +43,7 @@ const navigations = [
   {
     label: "Lets Talk",
     emoji: "☎️",
-    path: "/",
+    path: "/talk",
     color: "text-purple-500",
   },
   // {
@@ -144,7 +144,10 @@ const Header = () => {
                   color={nav.color}
                 ></NavItem>
               ))}
-              {renderThemeChanger()}
+              <li id="themeChanger" className="p-3">
+                {" "}
+                {renderThemeChanger()}
+              </li>
             </ul>
           </nav>
         </nav>
