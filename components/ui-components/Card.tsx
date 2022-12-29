@@ -33,10 +33,10 @@ const Card = ({ item }: Props) => {
       <p className="truncate ">{description}</p>
       <p>{mdx}</p>
       <div className="flex flex-row gap-1">
-        {tags.map((tag) => (
+        {tags.map((tag, index) => (
           //User reduce to filter out display=false
           <sub
-            key={`${Date.now() + tag}`}
+            key={`${Date.now() + index}`}
             before="|"
             className="mt-2 text-gray-800 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-md"
           >

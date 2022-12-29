@@ -90,11 +90,11 @@ export default function Work({ mdx }) {
             <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
               TL;DR: &nbsp;{" "}
             </span>
-            {fields.description}
+            {fields.tldr}
           </h2>
         </div>
         <Image
-          className="w-full shadow-xl rounded-lg"
+          className="w-full shadow-xl rounded-lg mb-10"
           src={`https:${fields.thumbnail.fields.file.url}`}
           alt={`${fields.name} thumbnail image`}
           width={fields.thumbnail.fields.file.details.image.width}
@@ -112,7 +112,7 @@ export default function Work({ mdx }) {
           <br />
         </main>
         <div
-          className="border-0 ring-transparent flex flex-col justify-center items-center gap-2"
+          className="border-0 ring-transparent flex flex-col justify-center items-center gap-2 mt-11"
           style={{ maxWidth: "45rem" }}
         >
           {documentToReactComponents(

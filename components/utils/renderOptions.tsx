@@ -52,13 +52,18 @@ export const renderOptionsForContentful = {
     ),
 
     [BLOCKS.PARAGRAPH]: (node: RichTextNodeType, children: string) => (
-      <p className="text-left w-full">{children}</p>
+      <p
+        className="text-left w-full text-lg font-normal leading-8
+      "
+      >
+        {children}
+      </p>
     ),
     [BLOCKS.HEADING_1]: (node: RichTextNodeType, children: string) => (
-      <h1 className="text-2xl text-left w-full">{children}</h1>
+      <h1 className="text-3xl text-left w-full">{children}</h1>
     ),
     [BLOCKS.HEADING_2]: (node: RichTextNodeType, children: string) => (
-      <h2 className=" text-left w-full">{children}</h2>
+      <h2 className="mt-12 text-2xl text-left w-full">{children}</h2>
     ),
     [BLOCKS.HEADING_3]: (node: RichTextNodeType, children: string) => (
       <h3 className=" text-left w-full">{children}</h3>
@@ -128,7 +133,7 @@ export const renderOptionsForContentful = {
       } else if (node.data.target.fields.file.contentType === "image/webp") {
         return (
           <img
-            className="border-0 ring-transparent"
+            className="border-0 ring-transparent mt-12 mb-6"
             src={`https://${node.data.target.fields.file.url}`}
             alt={node.data.target.fields.description}
             width={node.data.target.fields.file.details.image.width}
