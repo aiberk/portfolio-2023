@@ -112,12 +112,10 @@ export function projectFilter(items: any) {
   let temp = [];
   const priority = items.filter((item: any) => item.fields.priority == true);
   const nonPriority = items.filter(
-    (item: any) => item.fields.priority == false
+    (item: any) => item.fields.priority == false && item.fields.display == true
   );
   priority.sort((a: any, b: any) => b.fields.name - a.fields.name);
   nonPriority.sort((a: any, b: any) => b.fields.name - a.fields.name);
   temp.push(...priority, ...nonPriority);
   return temp;
 }
-
-console.log(projectFilter(testData));
