@@ -73,23 +73,23 @@ const Header = () => {
     setToggleState(toggleState === false ? true : false);
   };
 
-  const renderThemeChanger = () => {
-    if (!mounted) return null;
-    const currentTheme = theme === "system" ? systemTheme : theme;
-    if (currentTheme === "dark") {
-      return (
-        <Button className="hover:scale-125" onClick={() => setTheme("light")}>
-          <Emoji symbol="🌛" label="moon" />
-        </Button>
-      );
-    } else {
-      return (
-        <Button className="hover:scale-125" onClick={() => setTheme("dark")}>
-          <Emoji symbol="🌞" label="moon" />
-        </Button>
-      );
-    }
-  };
+  // const renderThemeChanger = () => {
+  //   if (!mounted) return null;
+  //   const currentTheme = theme === "system" ? systemTheme : theme;
+  //   if (currentTheme === "dark") {
+  //     return (
+  //       <Button className="hover:scale-125" onClick={() => setTheme("light")}>
+  //         <Emoji symbol="🌛" label="moon" />
+  //       </Button>
+  //     );
+  //   } else {
+  //     return (
+  //       <Button className="hover:scale-125" onClick={() => setTheme("dark")}>
+  //         <Emoji symbol="🌞" label="moon" />
+  //       </Button>
+  //     );
+  //   }
+  // };
 
   return (
     <>
@@ -144,10 +144,10 @@ const Header = () => {
                   color={nav.color}
                 ></NavItem>
               ))}
-              <li id="themeChanger" className="p-3">
+              {/* <li id="themeChanger" className="p-3">
                 {" "}
                 {renderThemeChanger()}
-              </li>
+              </li> */}
             </ul>
           </nav>
         </nav>
