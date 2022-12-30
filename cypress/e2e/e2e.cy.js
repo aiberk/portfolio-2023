@@ -5,7 +5,7 @@ describe("Navigation", () => {
     cy.visit("http://localhost:3000/");
 
     //Find a link with an hfre attribute cotaining "about" and clicks on it
-    cy.get('a[href*="/work/68HfzFXe5o25VA6GbFr3eu').click();
+    cy.get('a[href*="/work/abyiber.com').click();
 
     // New Url should include a '/'
     cy.url().should("include", "/work/");

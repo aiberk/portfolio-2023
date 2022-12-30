@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = res.items.map((item) => {
     return {
-      params: { slug: item.sys.id },
+      params: { slug: item.fields.name },
     };
   });
   return {
@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // export async function getStaticProps({ params }) {
   const { items } = await client.getEntries({
     content_type: "mdx",
-    "sys.id": params.slug,
+    "fields.name": params.slug,
   });
   return {
     props: { mdx: items[0] },
