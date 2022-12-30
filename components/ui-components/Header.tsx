@@ -120,7 +120,7 @@ const Header = () => {
             id="menu"
           >
             <ul
-              className={`flex text-base
+              className={` ${toggleState ? "hidden " : ""}flex text-base
               pt-4
               md:flex
               md:justify-between
@@ -132,7 +132,7 @@ const Header = () => {
               ${
                 toggleState
                   ? "flex-row"
-                  : "flex-col light: bg-white dark:bg-gray-800 h-screen w-screen fixed top-15 left-0 right-0 p-6"
+                  : "flex-col light: bg-white dark:bg-black h-screen w-screen fixed top-15 left-0 right-0 p-6"
               }`}
             >
               {navigations.map((nav) => (
