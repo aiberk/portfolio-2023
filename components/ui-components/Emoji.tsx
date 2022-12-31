@@ -8,7 +8,7 @@ type Props = {
 const Emoji = (props: Props) => {
   return (
     <span
-      className="emoji p-1 text-lg"
+      className="emoji p-1 text-lg hidden md:inline-flex"
       role="img"
       aria-label={props.label ? props.label : ""}
       aria-hidden={props.label ? "false" : "true"}

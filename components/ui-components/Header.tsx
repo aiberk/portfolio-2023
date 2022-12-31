@@ -94,46 +94,34 @@ const Header = () => {
   return (
     <>
       <header className="h-20">
-        <nav
+        <div
           className="flex
-          flex-wrap
+          flex-row
           items-center
           items-align-center
           justify-between
           w-full
           py-4
-          md:py-0
           px-0
           text-lg
           "
         >
           <Logo />
 
-          <Button className="md:hidden block z-auto" onClick={() => toggle()}>
-            {toggleState ? <Hamburger /> : <Close />}
-          </Button>
-
           <nav
-            className={`${
-              toggleState ? "hidden" : "flex flex-col"
-            } w-full md:flex md:items-center md:justify-between md:w-auto z-50`}
+            className={`flex flex-col  items-center justify-between w-auto z-50`}
             id="menu"
           >
             <ul
-              className={` ${toggleState ? "hidden" : ""}flex text-base
-              pt-4
+              className={`flex text-base
+              
               md:flex
               md:justify-between
               md:pt-0
               md:flex-row
-              border-dashed
-              md:bg-transparent
               md:relative
-              ${
-                toggleState
-                  ? "flex-row"
-                  : "flex-col light: bg-white dark:bg-black h-screen w-screen fixed top-15 left-0 right-0 p-6"
-              }`}
+              flex-row
+             `}
             >
               {navigations.map((nav) => (
                 <NavItem
@@ -144,13 +132,13 @@ const Header = () => {
                   color={nav.color}
                 ></NavItem>
               ))}
-              <li id="themeChanger" className="p-3">
+              <li id="themeChanger" className="p-3 hidden md:inline-flex">
                 {" "}
                 {renderThemeChanger()}
               </li>
             </ul>
           </nav>
-        </nav>
+        </div>
       </header>
     </>
   );

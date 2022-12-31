@@ -13,7 +13,7 @@ const NavItem = (props: NavItem) => {
         key={props.path + props.label + props.emoji}
       >
         {props.label}
-        {/* <Emoji symbol={props.emoji} label={props.label} /> */}
+        <Emoji symbol={props.emoji} label={props.label} />
       </Link>
     </li>
   );
