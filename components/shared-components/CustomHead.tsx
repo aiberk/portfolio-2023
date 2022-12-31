@@ -31,6 +31,16 @@ const CustomHead = ({ item }: Props) => {
         name="keywords"
         content="Software Development, Front-End, UX Design, Software Engineer, Product Designer, Full Stack Development"
       />
+
+      <meta name="twitter:card" content={description} />
+      <meta property="twitter:domain" content={`abyiber.com/`} />
+      <meta property="twitter:url" content={`abyiber.com/work/${name}`} />
+      <meta name="twitter:title" content={`${name} by Aby Iberkleid`} />
+      <meta name="twitter:description" content={description} />
+      <meta
+        name="twitter:image"
+        content={`https:${thumbnail.fields.file.url}`}
+      />
     </Head>
   );
 };
