@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import Card from "../components/ui-components/Card";
 import { config } from "../config";
 import { ContentFulItem } from "../types/types";
+import EntryFilter from "../components/shared-components/EntryFilter";
 
 type Props = {
   mdx: Array<ContentFulItem>;
@@ -25,6 +26,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ mdx }: Props) {
+  const sorted = EntryFilter(mdx);
   return (
     <>
       <Head>
@@ -51,7 +53,7 @@ export default function Home({ mdx }: Props) {
       <main className="grid grid-cols-1 place-content-between gap-12">
         <Hero />
         <section className="grid grid-cols-1 md:grid-cols-2 place-content-between gap-8">
-          {mdx.map((item) => (
+          {sorted.map((item) => (
             //User reduce to filter out display=false
             //User reduce to filter out display=false
             <Card key={item.sys.id} item={item}></Card>
