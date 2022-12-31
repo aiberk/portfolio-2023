@@ -17,7 +17,7 @@ const CustomHead = ({ item }: Props) => {
       <meta property="og:title" content="Abraham 'Aby' Iberkleid's Portfolio" />
       <meta property="og:description" content={description} />
       <meta
-        property="og:image"
+        property="og:image:secure_url"
         content={`https:${thumbnail.fields.file.url}`}
       />
       <meta
