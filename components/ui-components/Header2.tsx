@@ -120,7 +120,7 @@ const Header = () => {
             id="menu"
           >
             <ul
-              className={` ${toggleState ? "hidden" : ""}flex text-base
+              className={` ${toggleState ? "hidden " : ""}flex text-base
               pt-4
               md:flex
               md:justify-between
