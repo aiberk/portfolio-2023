@@ -14,7 +14,7 @@ const CustomHead = ({ item }: Props) => {
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
-      <meta property="og:title" content="Abraham 'Aby' Iberkleid's Portfolio" />
+      <meta property="og:title" content={`${name} by Aby Iberkleid`} />
       <meta property="og:description" content={description} />
       <meta
         property="og:image:secure_url"
