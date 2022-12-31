@@ -12,8 +12,7 @@ type Props = {
 const Card = ({ item }: Props) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
-    <Link href={`/work/${item.fields.name}`} className="text-xl w-full">
-      {/* className={`border-8 border-sky-500`} */}
+    <Link href={`/work/${item.fields.name}`} className="text-xl w-full mb-6">
       <div className="w-full overflow-hidden grid gap-2 content-center rounded-lg shadow-xl mb-4">
         <Image
           className="w-full"

@@ -12,6 +12,7 @@ import { UseThemeProps } from "next-themes/dist/types";
 import { renderOptionsForContentful } from "../../components/utils/renderOptions";
 import CustomHead from "../../components/shared-components/CustomHead";
 import { RichTextContent } from "contentful";
+import { param } from "cypress/types/jquery";
 
 type Props = {
   mdx: Asset;
@@ -45,6 +46,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     content_type: "mdx",
     "fields.name": params.slug,
   });
+  // console.log(items);
+
   return {
     props: { mdx: items[0] },
   };
@@ -53,7 +56,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export default function Work({ mdx }) {
   const { systemTheme, theme, setTheme } = useTheme();
   const { fields, sys } = mdx;
-  console.log(fields.richText);
 
   return (
     <>
