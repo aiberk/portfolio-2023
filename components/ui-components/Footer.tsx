@@ -14,14 +14,24 @@ const Footer = () => {
       <div
         className="flex flex-row  items-center
     items-align-center
-    justify-between w-auto gap-2"
+    justify-between w-auto gap-4"
       >
-        <Link href={"https://www.linkedin.com"}>
-          <LinkedIn />
+        <Link
+          className="flex flex-row  items-center
+    items-align-center
+    justify-between"
+          href={"https://www.linkedin.com"}
+        >
+          LinkedIn
         </Link>
 
-        <Link href={"https://www.github.com"}>
-          <GithubIcon />
+        <Link
+          className="flex flex-row  items-center
+    items-align-center
+    justify-between"
+          href={"https://www.github.com"}
+        >
+          Github
         </Link>
       </div>
     </footer>

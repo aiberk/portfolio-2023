@@ -21,12 +21,12 @@ const navigations = [
   //   path: "/",
   //   color: "text-purple-500",
   // },
-  {
-    label: "About",
-    emoji: "🧑",
-    path: "/about",
-    color: "text-purple-500",
-  },
+  // {
+  //   label: "About",
+  //   emoji: "🧑",
+  //   path: "/about",
+  //   color: "text-purple-500",
+  // },
   // {
   //   label: "Blog",
   //   emoji: "📰",
@@ -43,7 +43,7 @@ const navigations = [
   {
     label: "Lets Talk",
     emoji: "☎️",
-    path: "/talk",
+    path: "mailto:abrahamiberkleid@gmail.com",
     color: "text-purple-500",
   },
   // {
