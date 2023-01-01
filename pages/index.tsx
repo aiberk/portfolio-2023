@@ -39,7 +39,7 @@ export default function Home({ mdx }: Props) {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Aby Iberkleid's Portfolio" />
         <meta property="og:description" content="Aby Iberkleid's Portfolio" />
-        <meta property="og:image" content="../public/favicon.png" />
+        <meta property="og:image" content="./public/favicon.png" />
         <meta property="og:image:alt" content="Aby Iberkleid Logo" />
         <meta property="og:url" content="abyiber.com/" />
         <meta property="og:type" content="website" />
