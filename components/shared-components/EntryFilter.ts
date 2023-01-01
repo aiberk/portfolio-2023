@@ -1,4 +1,3 @@
-import React from "react";
 import { ContentFulItem } from "../../types/types";
 
 function EntryFilter(items: Array<ContentFulItem>) {
@@ -16,7 +15,7 @@ function EntryFilter(items: Array<ContentFulItem>) {
 
 export default EntryFilter;
 
-const Sort = (list) => {
+const Sort = (list: Array<ContentFulItem>) => {
   return list.sort(function (a, b) {
     if (a.fields.name.toLowerCase() < b.fields.name.toLowerCase()) {
       return -1;

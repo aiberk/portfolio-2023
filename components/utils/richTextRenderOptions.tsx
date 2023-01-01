@@ -1,17 +1,6 @@
 import Link from "next/link";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
-import {
-  RichTextType,
-  RichTextTypeContent,
-  RichTextTypeData,
-} from "../../types/richTextTypes";
-import {
-  RichTextContent,
-  RichTextData,
-  RichTextDataTarget,
-  RichTextNodeType,
-} from "contentful";
-import { RichText } from "../../types/types";
+import { RichTextContent, RichTextNodeType } from "contentful";
 
 //Dittle (dot) for list items (<li>)
 const beforeMark: string = "·";

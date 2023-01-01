@@ -1,21 +1,18 @@
 import Link from "next/link";
-import { Asset, createClient } from "contentful";
+import { createClient } from "contentful";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { config } from "../../config";
 import { ContentFulItem, RichText } from "../../types/types";
-import { RichTextType } from "../../types/richTextTypes";
 import Image from "next/image";
 import Arrow from "../../components/ui-components/Arrow";
 import { useTheme } from "next-themes";
-import { UseThemeProps } from "next-themes/dist/types";
 import { renderOptionsForContentful } from "../../components/utils/renderOptions";
 import CustomHead from "../../components/shared-components/CustomHead";
-import { RichTextContent } from "contentful";
 import { param } from "cypress/types/jquery";
 
 type Props = {
-  mdx: Asset;
+  mdx: ContentFulItem;
 };
 
 const client = createClient({
@@ -53,7 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default function Work({ mdx }) {
+export default function Work({ mdx }: Props) {
   const { systemTheme, theme, setTheme } = useTheme();
   const { fields, sys } = mdx;
 
