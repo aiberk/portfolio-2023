@@ -37,21 +37,6 @@ const nextConfig = {
       },
     ],
   },
-  // experimental: {
-  //   urlImports: ["https://https://www.youtube.com/embed/"],
-  // },
 };
 
-// https:////assets.ctfassets.net/9ml0r0lfbqrn/7sKtwLDA0eNGqRjpQ8aSaB/6add39f28e22502d47d3ce3e527511a6/FgnxcUQ5vho
-
 module.exports = nextConfig;
-
-//Tulip Example
-// exportPathMap: function () {
-//   return {
-//     '/': { page: '/' },
-//     '/apps': { page: '/apps', query: { query: 'query' } },
-//     '/apps/[id]': { page: '/apps/[id]' },
-//   };
-// },
-// trailingSlash: true,
