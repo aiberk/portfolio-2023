@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   });
 
   const res = await client.getEntries({ content_type: "mdx" });
-  return { props: { mdx: res.items } };
+  return { props: { mdx: res.items }, revalidate: 10 };
 };
 
 // const inter = Inter({ subsets: ["latin"] });

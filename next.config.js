@@ -35,11 +35,6 @@ const nextConfig = {
         hostname: "assets.ctfassets.net",
         pathname: "**",
       },
-      {
-        protocol: "https",
-        hostname: "../public/",
-        pathname: "**",
-      },
     ],
   },
 };
