@@ -8,6 +8,7 @@ import Card from "../components/ui-components/Card";
 import { config } from "../config";
 import { ContentFulItem } from "../types/types";
 import EntryFilter from "../components/shared-components/EntryFilter";
+import facvicon from "../public/facvicon.png";
 
 type Props = {
   mdx: Array<ContentFulItem>;
@@ -39,7 +40,7 @@ export default function Home({ mdx }: Props) {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Aby Iberkleid's Portfolio" />
         <meta property="og:description" content="Aby Iberkleid's Portfolio" />
-        <meta property="og:image" content="./public/favicon.png" />
+        <meta property="og:image" content={`${facvicon}`} />
         <meta property="og:image:alt" content="Aby Iberkleid Logo" />
         <meta property="og:url" content="abyiber.com/" />
         <meta property="og:type" content="website" />
