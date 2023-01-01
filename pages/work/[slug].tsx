@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = res.items.map((item) => {
     return {
       params: { slug: item.fields.name },
-      revalidate: 1,
+      revalidate: 10,
     };
   });
   return {
