@@ -39,7 +39,7 @@ export default function Home({ mdx }: Props) {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Aby Iberkleid's Portfolio" />
         <meta property="og:description" content="Aby Iberkleid's Portfolio" />
-        <meta property="og:image" content="/public/favicon.png" />
+        <meta property="og:image" content="../public/favicon.png" />
         <meta property="og:image:alt" content="Aby Iberkleid Logo" />
         <meta property="og:url" content="abyiber.com/" />
         <meta property="og:type" content="website" />
@@ -48,6 +48,16 @@ export default function Home({ mdx }: Props) {
           name="keywords"
           content="Software Development, Front-End, UX Design, Software Engineer, Product Designer, Full Stack Development"
         />
+
+        <meta name="twitter:card" content="Aby Iberkleid's Portfolio" />
+        <meta property="twitter:domain" content={`abyiber.com/`} />
+        <meta property="twitter:url" content={`abyiber.com/`} />
+        <meta name="twitter:title" content={`Aby Iberkleid's Portfolio`} />
+        <meta
+          name="twitter:description"
+          content={`Aby Iberkleid's Portfolio`}
+        />
+        <meta name="twitter:image" content="../public/favicon.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <main className="grid grid-cols-1 place-content-between gap-12">
