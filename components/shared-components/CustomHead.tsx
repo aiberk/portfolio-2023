@@ -20,6 +20,7 @@ const CustomHead = ({ item }: Props) => {
         property="og:image:secure_url"
         content={`https:${thumbnail.fields.file.url}`}
       />
+
       <meta
         property="og:image:alt"
         content={`Selected User Interface screenshot from  ${name}`}
