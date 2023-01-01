@@ -16,11 +16,14 @@ const CustomHead = ({ item }: Props) => {
       <link rel="icon" href="/favicon.ico" />
       <meta property="og:title" content={`${name} by Aby Iberkleid`} />
       <meta property="og:description" content={description} />
-      <meta
+      {/* <meta
         property="og:image:secure_url"
         content={`https:${thumbnail.fields.file.url}`}
+      /> */}
+      <meta
+        property="og:image"
+        content={`https:${thumbnail.fields.file.url}`}
       />
-
       <meta
         property="og:image:alt"
         content={`Selected User Interface screenshot from  ${name}`}
@@ -30,7 +33,7 @@ const CustomHead = ({ item }: Props) => {
       <meta property="og:site_name" content="abyiber.com" />
       <meta
         name="keywords"
-        content="Software Development, Front-End, UX Design, Software Engineer, Product Designer, Full Stack Development"
+        content="Software Development, Software Engineer, Product Designer, Full Stack Development, UX Design "
       />
 
       <meta name="twitter:card" content={description} />
