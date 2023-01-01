@@ -24,7 +24,6 @@ const client = createClient({
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await client.getEntries({
     content_type: "mdx",
-    revalidate: 10,
   });
 
   const paths = res.items.map((item) => {
