@@ -20,7 +20,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
 
 // box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 0.03125rem,
