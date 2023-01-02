@@ -140,13 +140,23 @@ export const renderOptionsForContentful = {
             height={node.data.target.fields.file.details.image.height}
           />
         );
+      } else if (node.data.target.fields.file.contentType === "image/gif") {
+        return (
+          <img
+            className="border-0 ring-transparent mt-12 mb-6"
+            src={`https://${node.data.target.fields.file.url}`}
+            alt={node.data.target.fields.description}
+            width={node.data.target.fields.file.details.image.width}
+            height={node.data.target.fields.file.details.image.height}
+          />
+        );
       } else if (node.data.target.fields.file.contentType === "text/html") {
         return (
           <iframe
             width="100%"
             height="405"
             src={`https://www.youtube.com/embed/${node.data.target.fields.file.fileName}`}
-            title="Learn TypeScript in 50 Minutes - Tutorial for Beginners"
+            title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
