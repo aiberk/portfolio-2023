@@ -1,6 +1,5 @@
-import LinkedIn from "./Linkedin";
 import Link from "next/link";
-import GithubIcon from "./GithubIcon";
+
 const Footer = () => {
   return (
     <footer
@@ -20,7 +19,7 @@ const Footer = () => {
           className="flex flex-row  items-center
     items-align-center
     justify-between"
-          href={"https://www.linkedin.com"}
+          href={"https://www.linkedin.com/in/abyiber/"}
         >
           LinkedIn
         </Link>
@@ -29,7 +28,7 @@ const Footer = () => {
           className="flex flex-row  items-center
     items-align-center
     justify-between"
-          href={"https://www.github.com"}
+          href={"https://github.com/aiberk"}
         >
           Github
         </Link>
