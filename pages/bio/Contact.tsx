@@ -5,6 +5,7 @@ type Props = {};
 const Contact = (props: Props) => {
   return (
     <main className="flex flex-col items-center w-full">
+      <h1>Send me an email from here</h1>
       <form
         className="grid grid-cols-1 p-1 "
         action="/send-data-here"
