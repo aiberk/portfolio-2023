@@ -1,29 +1,60 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { config } from "../../config";
 
-type Props = {};
+type FormData = {
+  name: string;
+  lastName: string;
+  email: string;
+  message: string;
+};
 
-const Contact = (props: Props) => {
+const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<FormData>();
+
+  const onFormSubmit = (data: FormData) => {
+    console.log("data", data);
+    fetch(`https://eoool18qsq2s2me.m.pipedream.net`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...data }),
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((e) => console.error(e));
+  };
   return (
-    <main className="flex flex-col items-center w-full">
-      <h1>Send me an email from here</h1>
+    <main className="flex flex-col items-center w-full p-6">
+      <h1 className="text-2xl font-semibold">Let's talk</h1>
+      <h2 className="text-1xl font-semibold">
+        This form will send an email directly to my inbox
+      </h2>
       <form
-        className="grid grid-cols-1 p-1 "
+        onSubmit={handleSubmit(onFormSubmit)}
+        className="grid grid-cols-1 p-1 gap-2 "
         action="/send-data-here"
         method="post"
       >
-        <label htmlFor="first">First name:</label>
-        <input className="" type="text" id="first" name="first" />
-        <label htmlFor="last">Last name:</label>
-        <input type="text" id="last" name="last" />
+        <label htmlFor="name">First name:</label>
+        <input className="" type="text" id="first" {...register("name")} />
+        <label htmlFor="lastName">Last name:</label>
+        <input type="text" id="last" {...register("lastName")} />
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
-        <label htmlFor="body">Message</label>
+        <input type="email" id="email" {...register("email")} />
+        <label htmlFor="message">Message</label>
         <textarea
           id="body"
-          name="body"
           placeholder=" Write your message here..."
           rows={10}
           cols={50}
+          {...register("message")}
         ></textarea>
         <br />
         <button

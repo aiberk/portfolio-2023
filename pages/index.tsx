@@ -23,8 +23,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return { props: { mdx: res.items } };
 };
 
-// const inter = Inter({ subsets: ["latin"] });
-
 export default function Home({ mdx }: Props) {
   const sorted = EntryFilter(mdx);
   return (

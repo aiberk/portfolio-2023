@@ -17,6 +17,7 @@ const nextConfig = {
   env: {
     CONTNETFUL_ACCESS_KEY: process.env.CONTNETFUL_ACCESS_KEY,
     CONTNETFUL_SPACE_ID: process.env.CONTNETFUL_SPACE_ID,
+    PIPEDREAM_API_ENDPOINT: process.env.PIPEDREAM_API_ENDPOINT,
   },
   images: {
     remotePatterns: [
