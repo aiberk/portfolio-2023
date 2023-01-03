@@ -35,7 +35,7 @@ const Contact = () => {
       </h2>
       <form
         onSubmit={handleSubmit(onFormSubmit)}
-        className="grid grid-cols-1 p-1 gap-2 "
+        className="grid grid-cols-1 p-1 gap-2 dark:text-white "
         action="/send-data-here"
         method="post"
       >
@@ -62,7 +62,7 @@ const Contact = () => {
                     block
                     w-full
                     bg-gray-100
-                    hover:bg-black
+                   
                     p-2
                   "
           type="submit"
