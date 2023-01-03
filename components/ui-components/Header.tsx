@@ -43,7 +43,7 @@ const navigations = [
   {
     label: "Lets Talk",
     emoji: "☎️",
-    path: "mailto:abrahamiberkleid@gmail.com",
+    path: "/bio/Contact",
     color: "text-purple-500",
   },
   // {

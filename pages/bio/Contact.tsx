@@ -108,7 +108,7 @@ const Contact = () => {
       </form>
       {successMessage && (
         <div className="flex flex-col justify-center items-center mt-5">
-          <p>Thanks for message! 😊</p>
+          <p>Thanks for the message! 😊</p>
           <p>I will get back to you as soon as possible</p>
         </div>
       )}
