@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { config } from "../../config";
 
 type FormData = {
   name: string;
@@ -14,10 +13,10 @@ const Contact = () => {
     register,
     handleSubmit,
     formState: { isSubmitting },
+    reset,
   } = useForm<FormData>();
 
   const onFormSubmit = (data: FormData) => {
-    console.log("data", data);
     fetch(`https://eoool18qsq2s2me.m.pipedream.net`, {
       method: "POST",
       headers: {
@@ -25,9 +24,7 @@ const Contact = () => {
       },
       body: JSON.stringify({ ...data }),
     })
-      .then((response) => {
-        console.log(response);
-      })
+      .then((response) => {})
       .catch((e) => console.error(e));
   };
   return (
