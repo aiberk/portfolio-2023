@@ -46,11 +46,13 @@ const Contact = () => {
 
   const sharedClassNames = "dark:bg-zinc-900   focus:ring-zinc-200 ";
   return (
-    <main className="flex flex-col items-center w-full p-6">
-      <h1 className="text-2xl font-semibold">Let's talk</h1>
-      <h2 className="text-1xl font-semibold">
-        This form will send an email directly to my inbox
-      </h2>
+    <main className="flex flex-col items-center w-full p-6 gap-8">
+      <div className="flex flex-col items-center">
+        <h1 className="text-2xl font-semibold">Let's talk</h1>
+        <h2 className="text-1xl font-semibold">
+          This form will send an email directly to my inbox
+        </h2>
+      </div>
       <form
         onSubmit={handleSubmit(onFormSubmit)}
         className="grid grid-cols-1 p-1 gap-2  "
