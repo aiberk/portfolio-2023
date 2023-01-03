@@ -104,14 +104,18 @@ const Contact = () => {
                     p-2
                   "
           type="submit"
+          id="submit"
         >
           Submit
         </button>
       </form>
       {successMessage && (
-        <div className="flex flex-col justify-center items-center mt-5">
-          <p>Thanks for the message! 😊</p>
-          <p>I will get back to you as soon as possible</p>
+        <div
+          id="successMessage"
+          className="flex flex-col justify-center items-center mt-5"
+        >
+          <p id="successMessage1">Thanks for the message! 😊</p>
+          <p id="successMessage2">I will get back to you as soon as possible</p>
         </div>
       )}
     </main>
