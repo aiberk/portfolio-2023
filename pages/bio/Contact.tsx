@@ -1,12 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 
 type FormData = {
   name: string;
   lastName: string;
   email: string;
   message: string;
+  singleErrorInput: string;
 };
 
 const Contact = () => {
@@ -20,6 +22,8 @@ const Contact = () => {
     defaultValues: { name: "", lastName: "", email: "", message: "" },
   });
 
+  const [successMessage, setSuccessMessage] = useState(false);
+
   const onFormSubmit = (data: FormData) => {
     fetch(`https://eoool18qsq2s2me.m.pipedream.net`, {
       method: "POST",
@@ -28,7 +32,9 @@ const Contact = () => {
       },
       body: JSON.stringify({ ...data }),
     })
-      .then((response) => {})
+      .then((response) => {
+        setSuccessMessage(true);
+      })
       .catch((e) => console.error(e));
   };
 
@@ -63,14 +69,14 @@ const Contact = () => {
           type="text"
           className={`${sharedClassNames}`}
           id="last"
-          {...register("lastName")}
+          {...register("lastName", { required: true })}
         />
         <label htmlFor="email">Email</label>
         <input
           type="email"
           className={`${sharedClassNames}`}
           id="email"
-          {...register("email")}
+          {...register("email", { required: true })}
         />
         <label htmlFor="message">Message</label>
         <textarea
@@ -79,7 +85,7 @@ const Contact = () => {
           placeholder=" Write your message here..."
           rows={10}
           cols={50}
-          {...register("message")}
+          {...register("message", { required: true })}
         ></textarea>
         <br />
         <button
@@ -100,6 +106,12 @@ const Contact = () => {
           Submit
         </button>
       </form>
+      {successMessage && (
+        <div className="flex flex-col justify-center items-center mt-5">
+          <p>Thanks for message! 😊</p>
+          <p>I will get back to you as soon as possible</p>
+        </div>
+      )}
     </main>
   );
 };
