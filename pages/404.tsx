@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-type Props = {};
 
-function NotFound({}: Props) {
+function NotFound() {
   return (
     <div className="h-screen flex flex-col justify-center items-center gap-8">
       <h1 className="md:text-9xl">404</h1>
