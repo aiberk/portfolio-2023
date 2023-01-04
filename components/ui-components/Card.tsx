@@ -31,7 +31,7 @@ const Card = ({ item }: Props) => {
       <div className="pt-0 pl-2">
         <p className="truncate font-semibold">{name}</p>
         <p className="truncate ">{description}</p>
-        <div className="flex flex-wrap flex-row gap-1 mt-2">
+        <div className="flex flex-wrap flex-row gap-1 mt-1">
           {tags.map((tag, index) => (
             //User reduce to filter out display=false
             <span
