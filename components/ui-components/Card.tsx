@@ -36,8 +36,10 @@ const Card = ({ item }: Props) => {
           //User reduce to filter out display=false
           <sub
             key={`${Date.now() + index}`}
+            // before="·"
+            // before="•"
             before="|"
-            className="break-normal lg:mt-2 mt-4 text-gray-800 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-md"
+            className="break-normal lg:mt-2 mt-2 text-gray-800 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-md"
           >
             {tag}
           </sub>
