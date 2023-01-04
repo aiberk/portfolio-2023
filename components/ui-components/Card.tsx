@@ -40,7 +40,7 @@ const Card = ({ item }: Props) => {
               // before="•"
               // before="|"
               // before:content-[attr(before)] first:before:content-none
-              className="text-xs break-normal text-zinc-900  flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-1"
+              className="text-xs break-normal text-zinc-900 dark:bg-zinc-700 dark:text-white flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-1"
             >
               {tag}
             </span>
