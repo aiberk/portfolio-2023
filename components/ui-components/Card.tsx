@@ -28,22 +28,24 @@ const Card = ({ item }: Props) => {
               33vw"
         />
       </div>
-      <p className="truncate font-semibold">{name}</p>
-      <p className="truncate ">{description}</p>
-      <p>{mdx}</p>
-      <div className="flex flex-wrap flex-row gap-1">
-        {tags.map((tag, index) => (
-          //User reduce to filter out display=false
-          <sub
-            key={`${Date.now() + index}`}
-            // before="·"
-            // before="•"
-            before="|"
-            className="break-normal lg:mt-2 mt-2 text-gray-800 dark:text-white flex flex-row gap-1 before:content-[attr(before)] first:before:content-none text-md"
-          >
-            {tag}
-          </sub>
-        ))}
+      <div className="pt-0 pl-2">
+        <p className="truncate font-semibold">{name}</p>
+        <p className="truncate ">{description}</p>
+        <div className="flex flex-wrap flex-row gap-1 mt-2">
+          {tags.map((tag, index) => (
+            //User reduce to filter out display=false
+            <span
+              key={`${Date.now() + index}`}
+              // before="·"
+              // before="•"
+              // before="|"
+              // before:content-[attr(before)] first:before:content-none
+              className="text-xs break-normal text-zinc-900  flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-1"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </Link>
   );
