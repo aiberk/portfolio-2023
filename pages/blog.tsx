@@ -1,6 +1,4 @@
 import Head from "next/head";
-// import { Inter } from "@next/font/google";
-// import styles from "../styles/Home.module.css";
 import Hero from "../components/ui-components/Hero";
 import { createClient } from "contentful";
 import { GetStaticProps } from "next";
@@ -62,8 +60,6 @@ export default function Home({ mdx }: Props) {
         <h1>Blog</h1>
         <section className="grid grid-cols-1 md:grid-cols-2 place-content-between gap-8">
           {sorted.map((item) => (
-            //User reduce to filter out display=false
-            //User reduce to filter out display=false
             <Card key={item.sys.id} item={item}></Card>
           ))}
         </section>
