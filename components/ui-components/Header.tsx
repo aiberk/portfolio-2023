@@ -30,7 +30,7 @@ const navigations = [
   // {
   //   label: "Blog",
   //   emoji: "📰",
-  //   path: "/about",
+  //   path: "/blog",
   //   color: "text-purple-500",
   // },
   // {
