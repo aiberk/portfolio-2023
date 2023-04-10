@@ -17,12 +17,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     accessToken: config.apiKey,
   });
 
-  const res = await client.getEntries({ content_type: "mdx" });
+  const res = await client.getEntries({ content_type: "blogPosts" });
   return { props: { mdx: res.items } };
 };
 
 export default function Home({ mdx }: Props) {
-  const sorted = EntryFilter(mdx);
+  // const sorted = EntryFilter(mdx);
   return (
     <>
       <Head>
@@ -59,8 +59,8 @@ export default function Home({ mdx }: Props) {
       <main className="grid grid-cols-1 place-content-between gap-12">
         <h1>Blog</h1>
         <section className="grid grid-cols-1 md:grid-cols-2 place-content-between gap-8">
-          {sorted.map((item) => (
-            <Card key={item.sys.id} item={item}></Card>
+          {mdx.map((item) => (
+            <h1 key={item.sys.id}>{item.fields.name}</h1>
           ))}
         </section>
       </main>
