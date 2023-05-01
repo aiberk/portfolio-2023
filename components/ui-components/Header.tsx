@@ -4,8 +4,6 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Emoji from "./Emoji";
 import Logo from "./Logo";
-import Hamburger from "./Hamburger";
-import Close from "./Close";
 import NavItem from "./NavItem";
 
 const navigations = [

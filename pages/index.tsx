@@ -11,6 +11,12 @@ type Props = {
   mdx: Array<ContentFulItem>;
 };
 
+/**
+ * Function that fetches all the entries from Contentful
+ * @param context
+ * @returns Fetches all the entries from Contentful and returns them as props
+ *
+ */
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const client = createClient({
     space: config.spaceId,

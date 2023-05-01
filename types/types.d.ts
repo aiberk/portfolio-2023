@@ -5,6 +5,10 @@ export interface CSSattributeTypes {
   >;
 }
 
+type FetchedProps = {
+  mdx: Entry<ContentFulItem>[];
+};
+
 export interface ContentFulItem {
   metadata: Metadata;
   sys: TargetSys;
