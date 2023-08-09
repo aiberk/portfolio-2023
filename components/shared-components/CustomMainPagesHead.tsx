@@ -9,10 +9,7 @@ type CustomMainPagesHeadProps = {
 const CustomMainPagesHead = ({ name, type }: CustomMainPagesHeadProps) => {
   return (
     <Head>
-      <title>
-        {name}
-        {type}
-      </title>
+      <title>{name + type}</title>
       <meta name="description" content={`${name} ${type}`} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta
