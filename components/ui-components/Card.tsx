@@ -37,20 +37,20 @@ const Card = ({ item }: Props) => {
           {" "}
           <p className="truncate font-semibold gap">{name} </p>
           <div className="flex flex-row gap-1">
-            {item.fields.githubUrl && (
-              <a
-                className="truncate"
-                href={item.fields.githubUrl}
-                target="_blank">
-                <GithubIcon />
-              </a>
-            )}
             {item.fields.demoUrl && (
               <a
                 className="truncate"
                 href={item.fields.demoUrl}
                 target="_blank">
                 <LinkIcon />
+              </a>
+            )}
+            {item.fields.githubUrl && (
+              <a
+                className="truncate"
+                href={item.fields.githubUrl}
+                target="_blank">
+                <GithubIcon />
               </a>
             )}
           </div>
