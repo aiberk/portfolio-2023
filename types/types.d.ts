@@ -25,6 +25,8 @@ export interface ContentFulItemFields {
   dateCreated: string;
   display: boolean;
   richText: RichText;
+  githubUrl: string;
+  demoUrl: string;
 }
 
 export interface RichText {
