@@ -41,6 +41,7 @@ const Card = ({ item }: Props) => {
               <a
                 className="truncate"
                 href={item.fields.githubUrl}
+                aria-label="Github Link"
                 target="_blank">
                 <GithubIcon />
               </a>
@@ -49,6 +50,7 @@ const Card = ({ item }: Props) => {
               <a
                 className="truncate"
                 href={item.fields.demoUrl}
+                aria-label="Demo Link"
                 target="_blank">
                 <LinkIcon />
               </a>
@@ -62,10 +64,6 @@ const Card = ({ item }: Props) => {
             //User reduce to filter out display=false
             <span
               key={`${Date.now() + index}`}
-              // before="·"
-              // before="•"
-              // before="|"
-              // before:content-[attr(before)] first:before:content-none
               className="text-xs break-normal text-zinc-900 dark:bg-zinc-700 dark:text-white flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-1">
               {tag}
             </span>
