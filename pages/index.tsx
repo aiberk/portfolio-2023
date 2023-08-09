@@ -35,8 +35,7 @@ export default function Home({ mdx }: Props) {
     <>
       <CustomMainPagesHead
         name={"Abraham Iberkleid's "}
-        type={"Porfolio"}
-      ></CustomMainPagesHead>
+        type={"Porfolio"}></CustomMainPagesHead>
       <main className="grid grid-cols-1 place-content-between gap-12">
         <Hero />
         <section className="grid grid-cols-1 md:grid-cols-2 place-content-between gap-8">
