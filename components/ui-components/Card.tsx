@@ -35,7 +35,7 @@ const Card = ({ item }: Props) => {
       <div className="pt-0 pl-2">
         <div className="flex flex-row w-full justify-between">
           {" "}
-          <p className="truncate font-semibold gap">{name} </p>
+          <p className="truncate font-semibold gap text-sm">{name} </p>
           <div className="flex flex-row gap-1">
             {item.fields.githubUrl && (
               <a
@@ -57,14 +57,14 @@ const Card = ({ item }: Props) => {
             )}
           </div>
         </div>
-        <p className="truncate ">{description}</p>
+        <p className="truncate text-sm">{description}</p>
 
         <div className="flex flex-wrap flex-row gap-1 mt-1">
           {tags.map((tag, index) => (
             //User reduce to filter out display=false
             <span
               key={`${Date.now() + index}`}
-              className="text-xs break-normal text-zinc-900 dark:bg-zinc-700 dark:text-white flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-1">
+              className="text-xs break-normal text-zinc-900 dark:bg-zinc-700 dark:text-white flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-2">
               {tag}
             </span>
           ))}

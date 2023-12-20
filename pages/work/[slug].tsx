@@ -10,6 +10,8 @@ import { useTheme } from "next-themes";
 import { renderOptionsForContentful } from "../../components/utils/renderOptions";
 import CustomHead from "../../components/shared-components/CustomHead";
 import { param } from "cypress/types/jquery";
+import GithubIcon from "../../components/ui-components/GithubIcon";
+import LinkIcon from "../../components/ui-components/LinkIcon";
 
 type Props = {
   mdx: ContentFulItem;
@@ -67,23 +69,45 @@ export default function Work({ mdx }: Props) {
           width: "10rem",
           padding: "0.4rem",
           borderRadius: "5px",
-        }}
-      >
+        }}>
         <Arrow /> Back to Work
       </Link>
       <div className="w-full grid grid-col-1" style={{ gap: "2rem" }}>
         <div
           className="grid gri-col 
         "
-          style={{ gap: "2rem" }}
-        >
+          style={{ gap: "2rem" }}>
           {" "}
           <h1
             className="font-semibold tracking-tight"
-            style={{ fontSize: "3.7rem", lineHeight: "1" }}
-          >
+            style={{ fontSize: "3.7rem", lineHeight: "1" }}>
             {fields.name}
           </h1>
+          <div className="flex flex-row max-w-sm gap-2">
+            {fields.githubUrl && (
+              <a
+                href={fields.githubUrl}
+                target="_blank"
+                aria-label="Github"
+                className="flex rounded-md flex-row justify-center items-center gap-2 border border-gray-600 p-2"
+                style={{ width: "200px" }}>
+                Go to Repo
+                <GithubIcon />
+              </a>
+            )}
+
+            {fields.demoUrl && (
+              <a
+                href={fields.demoUrl}
+                target="_blank"
+                aria-label="Github"
+                className="flex rounded-md flex-row justify-center items-center gap-2 border border-gray-600 p-2"
+                style={{ width: "200px" }}>
+                Demo
+                <LinkIcon />
+              </a>
+            )}
+          </div>
           <h2 className="text-2xl">
             {" "}
             <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
@@ -103,8 +127,7 @@ export default function Work({ mdx }: Props) {
           priority
           sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw"
-        ></Image>
+              33vw"></Image>
       </div>
       <div className=" flex flex-col justify-center items-center">
         <main style={{ maxWidth: "100%" }}>
@@ -112,8 +135,7 @@ export default function Work({ mdx }: Props) {
         </main>
         <div
           className="border-0 ring-transparent flex flex-col justify-center items-center gap-2 mt-11"
-          style={{ maxWidth: "45rem" }}
-        >
+          style={{ maxWidth: "45rem" }}>
           {documentToReactComponents(
             fields.richText,
             renderOptionsForContentful
