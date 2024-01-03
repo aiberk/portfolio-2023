@@ -23,7 +23,7 @@ const Hero = () => {
         </span>
         <br />
         <span className="bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500 font-[100px]">
-          Looking for internship opportunities starting summer of 2023 onward.
+          Looking for internship opportunities starting Spring 2024 onward.
         </span>
       </h2>
       {/* <Button className="bg-purple-600 text-white px-6">Hire Me!</Button> */}
