@@ -12,10 +12,11 @@ type Props = {
 };
 
 const Card = ({ item }: Props) => {
-  const { name, description, mdx, tags, thumbnail } = item.fields;
+  console.log(item);
+  const { name, description, mdx, tags, thumbnail, designTags } = item.fields;
   return (
     <div className="text-xl w-full mb-6">
-      <Link href={`/designWork/${item.fields.name}`}>
+      <Link href={`/work/${item.fields.name}`}>
         <div className="w-full overflow-hidden grid gap-2 content-center rounded-lg shadow-xl mb-4">
           <Image
             className="w-full"
@@ -60,14 +61,15 @@ const Card = ({ item }: Props) => {
         <p className="truncate text-sm">{description}</p>
 
         <div className="flex flex-wrap flex-row gap-1 mt-1">
-          {tags.map((tag, index) => (
-            //User reduce to filter out display=false
-            <span
-              key={`${Date.now() + index}`}
-              className="text-xs break-normal text-zinc-900 dark:bg-zinc-700 dark:text-white flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-2">
-              {tag}
-            </span>
-          ))}
+          {designTags &&
+            designTags.map((tag, index) => (
+              //User reduce to filter out display=false
+              <span
+                key={`${Date.now() + index}`}
+                className="text-xs break-normal text-zinc-900 dark:bg-zinc-700 dark:text-white flex flex-row gap-1  text-md bg-zinc-100 pt-1 pb-1 pr-3 pl-3 rounded-lg mt-2">
+                {tag}
+              </span>
+            ))}
         </div>
       </div>
     </div>
