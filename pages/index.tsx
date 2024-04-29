@@ -1,9 +1,9 @@
 import { GetStaticProps } from "next";
 import { createClient } from "contentful";
 import { ContentFulItem } from "../types/types";
-import Card from "../components/ui-components/Card";
+import Card from "../components/ui-components/designCard";
 import EntryFilter from "../components/shared-components/EntryFilter";
-import Hero from "../components/ui-components/Hero";
+import HeroDesign from "../components/ui-components/HeroDesign";
 import { config } from "../config";
 import CustomMainPagesHead from "../components/shared-components/CustomMainPagesHead";
 
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function Home({ mdx }: Props) {
-  const filtered = mdx.filter((item) => item.fields.swe == true);
+  const filtered = mdx.filter((item) => item.fields.ux == true);
   const sorted = EntryFilter(filtered);
 
   return (
@@ -38,7 +38,7 @@ export default function Home({ mdx }: Props) {
         name={"Abraham Iberkleid's "}
         type={"Portfolio"}></CustomMainPagesHead>
       <main className="grid grid-cols-1 place-content-between gap-12">
-        <Hero />
+        <HeroDesign />
         <section className="grid grid-cols-1 md:grid-cols-3 place-content-between gap-8">
           {sorted.map((item) => (
             <Card key={item.sys.id} item={item} />
