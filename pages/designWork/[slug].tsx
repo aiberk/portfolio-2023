@@ -137,7 +137,7 @@ export default function Work({ mdx }: Props) {
           className="border-0 ring-transparent flex flex-col justify-center items-center gap-2 mt-11"
           style={{ maxWidth: "45rem" }}>
           {documentToReactComponents(
-            fields.richText,
+            fields.designRichText,
             renderOptionsForContentful
           )}
         </div>

@@ -15,7 +15,7 @@ const Card = ({ item }: Props) => {
   const { name, description, mdx, tags, thumbnail } = item.fields;
   return (
     <div className="text-xl w-full mb-6">
-      <Link href={`/design/${item.fields.name}`}>
+      <Link href={`/designWork/${item.fields.name}`}>
         <div className="w-full overflow-hidden grid gap-2 content-center rounded-lg shadow-xl mb-4">
           <Image
             className="w-full"
