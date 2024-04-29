@@ -113,7 +113,7 @@ export default function Work({ mdx }: Props) {
             <span className="font-semibold text-2xl bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500">
               TL;DR: &nbsp;{" "}
             </span>
-            {fields.tldr}
+            {fields.designTldr}
           </h2>
         </div>
         <Image
