@@ -5,7 +5,8 @@ const Logo = () => {
   return (
     <div>
       <Link href={"/"} className="font-semibold">
-        abyiber.com
+        {/* <span className="boldest ">design</span>. */}
+        <span className="bold">abyiber.com</span>
       </Link>
     </div>
   );
