@@ -60,7 +60,7 @@ export default function Work({ mdx }: Props) {
     <>
       <CustomHead item={mdx} />
       <Link
-        href={"/design"}
+        href={"/"}
         className="text-lg flex flex-row  gap-2 items-center mb-6 pb-2 font-semibold  text-black "
         style={{
           marginBottom: "4rem",
