@@ -39,7 +39,7 @@ export default function Home({ mdx }: Props) {
         type={"Portfolio"}></CustomMainPagesHead>
       <main className="grid grid-cols-1 place-content-between gap-12">
         <HeroDesign />
-        <section className="mt-6 grid grid-cols-1 md:grid-cols-2 place-content-between gap-8">
+        <section className="mt-6 grid grid-cols-1 md:grid-cols-1 place-content-between gap-8">
           {sorted.map((item) => (
             <Card key={item.sys.id} item={item} />
           ))}
