@@ -16,14 +16,15 @@ const Hero = () => {
         <br />I code, design, research, plan,
         <br /> model, test, &amp; connect the dots.
       </h1>
-      <h2 className="text-lg md:text-2xl mt-4">
-        <span>
+      <h2 className="text-md md:text-2xl mt-4">
+        {/* <span>
           {" "}
           I am a CS graduate student with a background in UX/UI design
         </span>
-        <br />
-        <span className="bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500 font-[100px]">
-          Looking for internship opportunities starting Spring 2024 onward.
+        <br /> */}
+        <span className="bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500 font-[50px]">
+          CS graduate student with a background in UX/UI design looking for
+          internship starting Spring 2024
         </span>
       </h2>
       {/* <Button className="bg-purple-600 text-white px-6">Hire Me!</Button> */}
