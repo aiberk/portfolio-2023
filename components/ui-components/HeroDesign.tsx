@@ -8,9 +8,10 @@ const Hero = () => {
         <span className="bg-clip-text light:text-black dark:text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
           end-to-end
         </span>
-        <span> </span>
+        {/* <span> </span> */}
+        <br />
         <span className="bg-clip-text light:text-black dark:text-transparent bg-gradient-to-r from-green-500 to-lime-500">
-          designer
+          Design Engineer
         </span>
         .
         <br />I code, design, research, plan,
