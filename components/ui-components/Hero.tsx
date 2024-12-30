@@ -18,12 +18,12 @@ const Hero = () => {
       <h2 className="text-lg md:text-2xl mt-4">
         <span>
           {" "}
-          I am a graduate student at Brandeis University pursuing a MS in
-          Computer Science.
+          I have a MS in Computer Science from Brandeis University and
+          background in UX/UI design.
         </span>
         <br />
         <span className="bg-clip-text light: text-red-500 dark:text-transparent bg-gradient-to-r from-yellow-500 to-orange-500 font-[100px]">
-          Looking for internship opportunities starting Spring 2024 onward.
+          Looking for new opportunities starting Spring 2025.
         </span>
       </h2>
       {/* <Button className="bg-purple-600 text-white px-6">Hire Me!</Button> */}

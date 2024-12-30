@@ -20,7 +20,7 @@ type Props = {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const client = createClient({
     space: config.spaceId,
-    accessToken: config.apiKey,
+    accessToken: config.apiKey
   });
 
   const res = await client.getEntries({ content_type: "mdx" });
@@ -29,8 +29,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function Home({ mdx }: Props) {
-  const filtered = mdx.filter((item) => item.fields.swe == true);
-  const sorted = EntryFilter(filtered);
+  // const filtered = mdx.filter((item) => item.fields.ux == true);
+  const sorted = EntryFilter(mdx);
 
   return (
     <>
