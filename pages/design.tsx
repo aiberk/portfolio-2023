@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { createClient } from "contentful";
 import { ContentFulItem } from "../types/types";
-import Card from "../components/ui-components/Card";
+import Card from "../components/ui-components/designCard";
 import EntryFilter from "../components/shared-components/EntryFilter";
 import HeroDesign from "../components/ui-components/HeroDesign";
 import { config } from "../config";
@@ -29,7 +29,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function Home({ mdx }: Props) {
-  const sorted = EntryFilter(mdx);
+  const filtered = mdx.filter((item) => item.fields.ux == true);
+  const sorted = EntryFilter(filtered);
 
   return (
     <>
@@ -39,7 +40,7 @@ export default function Home({ mdx }: Props) {
       <main className="grid grid-cols-1 place-content-between gap-12">
         <HeroDesign />
         <section className="grid grid-cols-1 md:grid-cols-3 place-content-between gap-8">
-          {mdx.map((item) => (
+          {sorted.map((item) => (
             <Card key={item.sys.id} item={item} />
           ))}
         </section>

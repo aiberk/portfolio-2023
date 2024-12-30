@@ -20,7 +20,7 @@ type Props = {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const client = createClient({
     space: config.spaceId,
-    accessToken: config.apiKey,
+    accessToken: config.apiKey
   });
 
   const res = await client.getEntries({ content_type: "mdx" });
@@ -29,6 +29,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function Home({ mdx }: Props) {
+  // const filtered = mdx.filter((item) => item.fields.ux == true);
   const sorted = EntryFilter(mdx);
 
   return (
@@ -39,7 +40,7 @@ export default function Home({ mdx }: Props) {
       <main className="grid grid-cols-1 place-content-between gap-12">
         <Hero />
         <section className="grid grid-cols-1 md:grid-cols-3 place-content-between gap-8">
-          {mdx.map((item) => (
+          {sorted.map((item) => (
             <Card key={item.sys.id} item={item} />
           ))}
         </section>
