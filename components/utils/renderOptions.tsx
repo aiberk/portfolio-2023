@@ -3,13 +3,13 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import {
   RichTextType,
   RichTextTypeContent,
-  RichTextTypeData,
+  RichTextTypeData
 } from "../../types/richTextTypes";
 import {
   RichTextContent,
   RichTextData,
   RichTextDataTarget,
-  RichTextNodeType,
+  RichTextNodeType
 } from "contentful";
 import { RichText } from "../../types/types";
 
@@ -25,7 +25,7 @@ export const renderOptionsForContentful = {
     [MARKS.UNDERLINE]: (text: string) => (
       <span className="underline">{text}</span>
     ),
-    [MARKS.CODE]: (text: string) => <code className="code">{text}</code>,
+    [MARKS.CODE]: (text: string) => <code className="code">{text}</code>
   },
   ///FIX FOR VIDEO
   renderNode: {
@@ -35,8 +35,7 @@ export const renderOptionsForContentful = {
     [BLOCKS.TABLE]: (node: RichTextNodeType, children: any) => (
       <table
         className="w-full border-solid border-2 rounded-md"
-        style={{ border: "solid 2px whitesmoke" }}
-      >
+        style={{ border: "solid 2px whitesmoke" }}>
         <tbody>{children}</tbody>
       </table>
     ),
@@ -57,8 +56,7 @@ export const renderOptionsForContentful = {
     [BLOCKS.PARAGRAPH]: (node: RichTextNodeType, children: string) => (
       <p
         className="text-left w-full text-lg font-normal leading-8
-      "
-      >
+      ">
         {children}
       </p>
     ),
@@ -83,25 +81,19 @@ export const renderOptionsForContentful = {
     [BLOCKS.OL_LIST]: (node: RichTextNodeType, children: string) => (
       <ol
         role="list"
-        className="marker:text-sky-400 text-left w-full list-decimal"
-      >
+        className="marker:text-gray-800 text-left w-full list-decimal pl-5">
         {children}
       </ol>
     ),
     [BLOCKS.UL_LIST]: (node: RichTextNodeType, children: string) => (
       <ul
         role="list"
-        className="marker:text-sky-400 list-disc text-left w-full"
-      >
+        className="marker:text-gray-800 list-disc text-left w-full pl-5">
         {children}
       </ul>
     ),
     [BLOCKS.LIST_ITEM]: (node: RichTextNodeType, children: string) => (
-      <li
-        className={`text-left w-full flex flex-row  before:content-[attr(${beforeMark})]`}
-      >
-        &nbsp;&nbsp;{children}
-      </li>
+      <li className="text-left w-full">{children}</li>
     ),
 
     [BLOCKS.EMBEDDED_ENTRY]: (node: any, children: string) => {
@@ -158,10 +150,9 @@ export const renderOptionsForContentful = {
             src={`https://www.youtube.com/embed/${node.data.target.fields.file.fileName}`}
             title=""
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+            allowFullScreen></iframe>
         );
       }
-    },
-  },
+    }
+  }
 };
